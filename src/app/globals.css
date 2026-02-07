@@ -21,7 +21,7 @@
   /* --- Colors: Text --- */
   --color-text-primary: #F0EDE8;
   --color-text-secondary: #B8B2A8;
-  --color-text-muted: #6B665E;
+  --color-text-muted: #807A72;
   --color-text-inverse: #0A0A0B;
 
   /* --- Colors: Primary accent (aged brass) --- */
@@ -30,11 +30,11 @@
   --color-accent-muted: #C8956A33;
   --color-accent-glow: #C8956A1A;
 
-  /* --- Colors: Secondary accent (teal) --- */
-  --color-secondary-primary: #5BA8A0;
-  --color-secondary-hover: #6DBDB5;
-  --color-secondary-muted: #5BA8A033;
-  --color-secondary-glow: #5BA8A01A;
+  /* --- Colors: Secondary accent (dusty magenta) --- */
+  --color-secondary-primary: #C278A0;
+  --color-secondary-hover: #D08BB2;
+  --color-secondary-muted: #C278A033;
+  --color-secondary-glow: #C278A01A;
 
   /* --- Colors: Borders --- */
   --color-border-subtle: #2A2A30;
@@ -104,7 +104,7 @@
   --shadow-lg: 0 8px 24px rgba(10, 10, 11, 0.5);
   --shadow-xl: 0 16px 48px rgba(10, 10, 11, 0.6);
   --shadow-glow-brass: 0 0 24px rgba(200, 149, 106, 0.15);
-  --shadow-glow-teal: 0 0 24px rgba(91, 168, 160, 0.15);
+  --shadow-glow-magenta: 0 0 24px rgba(194, 120, 160, 0.15);
 
   /* --- Motion / Transitions --- */
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);

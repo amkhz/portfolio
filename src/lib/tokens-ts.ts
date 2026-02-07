@@ -18,7 +18,7 @@ export const colors = {
   text: {
     primary:   '#F0EDE8',     // headings, primary body — warm parchment
     secondary: '#B8B2A8',     // supporting text — aged linen
-    muted:     '#6B665E',     // captions, metadata — warm gray
+    muted:     '#807A72',     // captions, metadata — a11y safe for large text/UI only
     inverse:   '#0A0A0B',     // text on light/accent surfaces
   },
 
@@ -30,12 +30,12 @@ export const colors = {
     glow:      '#C8956A1A',   // 10% — ambient glow effects
   },
 
-  // Secondary accent — teal (cool, tech, sci-fi)
+  // Secondary accent — dusty magenta (atmospheric, sci-fi warmth)
   secondary: {
-    primary:   '#5BA8A0',     // interactive states, code, tech elements
-    hover:     '#6DBDB5',     // hover/focus state
-    muted:     '#5BA8A033',   // 20% — subtle backgrounds
-    glow:      '#5BA8A01A',   // 10% — ambient glow effects
+    primary:   '#C278A0',     // interactive states, tech elements, highlights
+    hover:     '#D08BB2',     // hover/focus state
+    muted:     '#C278A033',   // 20% — subtle backgrounds
+    glow:      '#C278A01A',   // 10% — ambient glow effects
   },
 
   // Borders
@@ -139,8 +139,8 @@ export const shadows = {
   lg:   '0 8px 24px rgba(10, 10, 11, 0.5)',
   xl:   '0 16px 48px rgba(10, 10, 11, 0.6)',
   glow: {
-    brass: '0 0 24px rgba(200, 149, 106, 0.15)',
-    teal:  '0 0 24px rgba(91, 168, 160, 0.15)',
+    brass:   '0 0 24px rgba(200, 149, 106, 0.15)',
+    magenta: '0 0 24px rgba(194, 120, 160, 0.15)',
   },
 } as const;
 

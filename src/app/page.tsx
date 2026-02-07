@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <div className="h-12 w-12 rounded-md bg-secondary-primary" />
-                  <span className="font-heading text-xs text-text-muted">teal</span>
+                  <span className="font-heading text-xs text-text-muted">magenta</span>
                 </div>
               </div>
             </div>
@@ -118,8 +118,8 @@ export default function Home() {
                 <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-glow-brass">
                   <span className="font-heading text-xs text-text-muted">brass</span>
                 </div>
-                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-glow-teal">
-                  <span className="font-heading text-xs text-text-muted">teal</span>
+                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-glow-magenta">
+                  <span className="font-heading text-xs text-text-muted">magenta</span>
                 </div>
               </div>
             </div>
