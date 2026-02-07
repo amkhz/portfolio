@@ -193,7 +193,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'instant-sow',
-    title: 'Instant SOW / Rehab Co-Pilot',
+    title: 'Instant Scope of Work / Rehab Co-Pilot',
     subtitle: 'Cutting scope-of-work completion time in half with AI-powered document extraction and generation.',
     tags: ['GenAI', 'Enterprise UX', 'Workflow Design', 'ML Integration'],
     heroMetric: {

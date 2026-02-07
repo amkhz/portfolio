@@ -32,7 +32,8 @@ export default function WorkPage() {
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              className="group flex flex-col rounded-lg border border-border-subtle bg-bg-base p-6 transition-all duration-200 hover:border-border-strong hover:bg-bg-elevated hover:shadow-md"
+              aria-label={`View case study: ${project.title}`}
+              className="group flex flex-col rounded-lg border border-border-subtle bg-bg-base p-6 transition-all duration-200 hover:border-border-strong hover:bg-bg-elevated hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             >
               {/* Title — Space Grotesk heading font */}
               <h2 className="font-heading text-xl font-semibold leading-snug text-text-primary transition-colors duration-200 group-hover:text-accent-primary">

@@ -12,26 +12,26 @@ export function Footer() {
           </p>
 
           {/* Right — links */}
-          <div className="flex items-center gap-6">
+          <nav aria-label="Footer navigation" className="flex items-center gap-6">
             <Link
               href="/work"
-              className="font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary"
+              className="inline-flex min-h-[44px] items-center font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             >
-              Work
+              View Work
             </Link>
             <Link
               href="/about"
-              className="font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary"
+              className="inline-flex min-h-[44px] items-center font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             >
-              About
+              About Justin
             </Link>
             <a
               href="mailto:hello@justinhernandez.design"
-              className="font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary"
+              className="inline-flex min-h-[44px] items-center font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             >
-              Contact
+              Email Justin
             </a>
-          </div>
+          </nav>
         </div>
       </Container>
     </footer>

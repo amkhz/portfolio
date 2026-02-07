@@ -1,121 +1,194 @@
 # Project Context: Justin Hernandez Portfolio
 
+> **Last updated:** Day 2 of 48-hour sprint (Saturday build day)
+> **Current deploy:** https://portfolio-34zne4g41-300mhz-projects.vercel.app/
+
 ## Overview
-This is a personal portfolio site for Justin Hernandez, a lead product designer specializing in AI-powered enterprise product design. The site is built with a custom design token system as a proof-of-concept for an AI-powered design system workflow. The process of building this site is itself a case study.
+Personal portfolio site for Justin Hernandez, lead product designer specializing in AI-powered enterprise product design. Built with a custom design token system as a proof-of-concept for an AI-powered design system workflow. The process of building this site is itself a case study.
+
+## What's Done (Foundation Complete)
+
+**Friday evening (Day 1) — 100% complete:**
+- ✅ Next.js scaffolded (App Router, TypeScript, Tailwind)
+- ✅ Deployed to Vercel, pipeline working
+- ✅ `src/lib/tokens.ts` — full token system with colors, typography, spacing, motion, shadows, case study data types and placeholder data
+- ✅ `tailwind.config.ts` — extended with all token values
+- ✅ Google Fonts loaded: Podkova (display), Space Grotesk (headings), Didact Gothic (body)
+- ✅ `cn()` utility helper (clsx + tailwind-merge)
+- ✅ Layout shell: Container, Header (sticky + blur), Footer, wired into root layout
+- ✅ Dynamic routing: `/work/[slug]`, `/about`, homepage with case study links
+- ✅ `generateStaticParams` for case study routes
+- ✅ Basic pages rendering titles, subtitles, tags from data
+
+**Saturday (Day 2) — homepage components built:**
+- ✅ Hero component with Podkova display + ambient brass glow effect
+- ✅ Button component (3 variants: primary brass, secondary magenta, ghost)
+- ✅ ProjectCard component (image placeholder, title, tags, subtitle, metric, hover glow)
+- ✅ Homepage wired: Hero + ProjectCard grid (responsive 1→2→3 col)
+- ✅ Work listing page with full project grid
+
+## What To Build Next
+
+**Homepage is in good shape. Case study pages are the main gap.**
+
+1. **Case study content components** (HIGH PRIORITY — unblocks content work)
+   - CaseStudyHero, MetricCard, TextBlock, ImageBlock, ComparisonBlock
+2. **AboutSnippet** for homepage (one remaining homepage gap)
+3. **Effects components** (GrainOverlay, RevealOnScroll)
+4. **A11y audit** (focus rings, keyboard nav, heading hierarchy, contrast verification)
 
 ## Stack
 - **Framework:** Next.js 14+ (App Router, TypeScript)
-- **Styling:** Tailwind CSS, extended with custom design tokens
-- **Fonts:** Google Fonts — Podkova (display), Space Grotesk (headings), Didact Gothic (body)
+- **Styling:** Tailwind CSS extended with custom design tokens
+- **Fonts:** Podkova (display/serif), Space Grotesk (headings/sans), Didact Gothic (body/sans)
 - **Deployment:** Vercel
 - **Token source of truth:** `src/lib/tokens.ts`
 
+## Reference Sources
+- **Current portfolio (for copy/bio reference):** https://www.dtls.us/
+  - Has existing bio copy, resume, and project descriptions that can be adapted
+  - Tone is professional but personable — maintain that voice
+- **PM metrics site:** (will be provided for case study content)
+
 ## Visual Direction
 **Concept:** "Blade Runner meets Finn Juhl" — Danish mid-century modern warmth fused with sci-fi atmosphere.
-**Reference:** Duck and Cover bar in Copenhagen.
+**Reference:** Duck and Cover bar, Copenhagen.
 
-### Key design principles:
-- Dark mode is the DEFAULT and primary experience
-- Warm, never cold or sterile — backgrounds are warm blacks (#0A0A0B, #121214), not pure black
+### Design principles:
+- Dark mode is the ONLY mode for V1
+- Warm, never cold — backgrounds are warm blacks (#0A0A0B, #121214), not pure black
 - Text is warm parchment (#F0EDE8), never pure white
-- Dual accent system: aged brass (#C8956A) for primary/warm elements, teal (#5BA8A0) for tech/interactive elements
-- Texture and depth over flatness — use subtle grain overlays, ambient glows, layered shadows
+- Dual accent: aged brass (#C8956A) for primary/warm, dusty magenta (#C278A0) for tech/sci-fi
+- Texture and depth: subtle grain overlays, ambient glows, layered shadows
 - Typography carries personality; layout stays restrained and confident
-- Spacing should feel intentional and generous — Scandinavian restraint, not cramped
-- Motion is subtle and purposeful — no flashy animations, gentle reveals and transitions
+- Spacing is generous and intentional — Scandinavian restraint
+- Motion is subtle and purposeful — gentle reveals, no flashy animations
 
 ### What this site should NOT look like:
 - A default Tailwind/shadcn template
 - Cold, clinical, or corporate
 - Flat and textureless
-- Neon or cyberpunk (the sci-fi is atmospheric and warm, not garish)
-- Overly decorated or busy — restraint is key
+- Neon or cyberpunk (sci-fi is atmospheric and warm, not garish)
+- Overly decorated — restraint is key
+
+## Color Tokens (a11y verified)
+```
+Backgrounds (warm blacks):
+  deep:      #0A0A0B    page-level
+  base:      #121214    primary surface
+  elevated:  #1A1A1E    cards, elevated
+  subtle:    #222228    hover, distinction
+
+Text (warm whites):
+  primary:   #F0EDE8    headings, body         (~17:1 vs deep ✅)
+  secondary: #B8B2A8    supporting             (~9.8:1 vs deep ✅)
+  muted:     #807A72    large text/UI only     (~4.7:1 vs deep ✅ large only)
+  inverse:   #0A0A0B    on light surfaces
+
+Accent — brass (material, warm):
+  primary:   #C8956A    actions, links         (~6.3:1 vs deep ✅)
+  hover:     #D4A87A    hover state
+  muted:     #C8956A33  subtle bg (20%)
+  glow:      #C8956A1A  ambient (10%)
+
+Secondary — dusty magenta (atmosphere, sci-fi):
+  primary:   #C278A0    interactive, tech      (~5.8:1 vs deep ✅)
+  hover:     #D08BB2    hover state
+  muted:     #C278A033  subtle bg (20%)
+  glow:      #C278A01A  ambient (10%)
+
+Borders:
+  subtle:    #2A2A30    dividers
+  strong:    #3A3A42    emphasized
+
+Semantic:
+  success:   #7AB87A
+  warning:   #D4A84A
+  error:     #C87A6A
+```
 
 ## Typography System
-- **Podkova** (serif, variable): Hero text, big display statements, case study titles. Use with tight letter-spacing (-0.02em) and tight line-height (1.1). This is the personality font.
-- **Space Grotesk** (sans-serif, variable): Section headings, nav links, buttons, labels. Geometric precision that bridges mid-century and sci-fi. Use at medium/semibold weights.
-- **Didact Gothic** (sans-serif, 400 only): Body text, descriptions, prose. Clean and humanist. Use at normal line-height (1.65) for comfortable reading.
+- **Podkova** (serif, variable): Hero text, display statements, case study titles. Letter-spacing: -0.02em. Line-height: 1.1. This is the personality font.
+- **Space Grotesk** (sans, variable): Section headings, nav, buttons, labels. Geometric precision bridging mid-century and sci-fi. Medium/semibold weights.
+- **Didact Gothic** (sans, 400 only): Body text, descriptions, prose. Line-height: 1.65 for comfortable reading.
 
-### Type scale:
-- xs: 0.75rem (12px) — fine print
-- sm: 0.875rem (14px) — captions, metadata
-- base: 1rem (16px) — body
-- lg: 1.125rem (18px) — lead text
-- xl: 1.375rem (22px) — section subheads
-- 2xl: 1.75rem (28px) — section titles
-- 3xl: 2.5rem (40px) — page titles
-- 4xl: 3.5rem (56px) — hero display
-- 5xl: 5rem (80px) — bold statements (sparingly)
+### Type scale (rem):
+xs:0.75 sm:0.875 base:1 lg:1.125 xl:1.375 2xl:1.75 3xl:2.5 4xl:3.5 5xl:5
 
-## Color Tokens
-See `src/lib/tokens.ts` for full values. Key rules:
-- Background deep: #0A0A0B (page), base: #121214 (surfaces), elevated: #1A1A1E (cards)
-- Text primary: #F0EDE8, secondary: #B8B2A8, muted: #6B665E
-- Brass accent: #C8956A (primary actions, links, highlights)
-- Teal secondary: #5BA8A0 (interactive states, code elements, tech indicators)
-- Borders are warm grays: #2A2A30 (subtle), #3A3A42 (strong)
-- Shadows are warm-tinted with rgba(10, 10, 11, ...) — never cool gray shadows
-- Glow effects use accent colors at 10-15% opacity
+## Accessibility (WCAG 2.1 AA — non-negotiable)
+- All body text: 4.5:1 contrast minimum against background
+- Large text (24px+ / 18.66px+ bold): 3:1 minimum
+- Interactive elements: 3:1 for boundary/fill
+- Focus indicators: visible 2px ring in accent color with offset on ALL interactive elements
+- All images: descriptive alt text
+- Semantic HTML: proper heading hierarchy (h1 → h2 → h3, no skipping)
+- Keyboard accessible: tab order, enter/space activation on all interactive elements
+- aria-labels on icon-only buttons
+- Descriptive link text — no "click here" or "read more"
+- Minimum tap target: 44x44px
+- text.muted (#807A72): ONLY for large text (24px+), decorative labels, or placeholder text
 
-## Site Structure (4 pages)
-1. **Home** (`/`) — name, tagline, 3 featured project cards
-2. **Work** (`/work`) — gallery of all projects (can be combined with home for V1)
-3. **Project** (`/work/[slug]`) — individual case study pages
+## Site Structure
+1. **Home** (`/`) — name, tagline, hero, 3 featured project cards, about snippet
+2. **Work** (`/work`) — gallery of all projects (optional, can be section on home)
+3. **Project** (`/work/[slug]`) — individual case study pages (dynamic, data-driven)
 4. **About** (`/about`) — bio, photo placeholder, contact info
 
-## Components to Build
-### Layout
-- `Container` — max-width wrapper (~1200px) with responsive horizontal padding
-- `Section` — full-width block with consistent vertical padding (space-16 to space-24)
-- `Header` — sticky nav with backdrop blur, name/logo left, links right
-- `Footer` — minimal, warm, links + copyright
+## Components to Build Today
 
 ### Homepage
-- `Hero` — Podkova display text + Didact Gothic subtitle + ambient brass glow effect
-- `ProjectCard` — image thumbnail (placeholder OK), title, tags, one-liner, hover state with warm overlay
-- About snippet section
+- **Hero** — Podkova display heading + Didact Gothic subtitle + CTA button + ambient brass glow effect behind text. Should feel atmospheric and confident, not generic.
+- **ProjectCard** — card with: styled image placeholder (16:9, bg.elevated, descriptive text centered in muted), title (Space Grotesk), tags (Tag pills), one-liner (Didact Gothic). Hover: subtle lift + brass glow + border transition. Links to `/work/[slug]`.
+- **AboutSnippet** — brief intro section with photo placeholder and short bio. Can reference copy from https://www.dtls.us/ for tone.
 
-### Case Study
-- `CaseStudyHero` — title (Podkova), subtitle, hero metric, hero image placeholder
-- `MetricCard` — large stat number + label, with subtle accent border or glow
-- `ImageBlock` — responsive image container with optional caption. For now, render as a styled placeholder div with descriptive text
-- `TextBlock` — prose section, max-width for reading comfort (~65ch)
-- `ComparisonBlock` — side-by-side before/after layout
+### Case Study Template
+- **CaseStudyHero** — project title (Podkova h1), subtitle, MetricCard, hero image placeholder
+- **MetricCard** — large stat number (Podkova 4xl/5xl in accent color) + label (Space Grotesk). Subtle accent border or glow.
+- **ImageBlock** — responsive container, styled placeholder: bg.elevated, border.subtle, descriptive alt text centered, camera icon. 16:9 for heroes, flexible for inline.
+- **TextBlock** — prose wrapper, Didact Gothic, max-width ~65ch, comfortable reading rhythm
+- **ComparisonBlock** — side-by-side or stacked before/after layout with labels
 
 ### Interactive
-- `Button` — primary (brass fill), secondary (teal border), ghost (text only)
-- `Tag` — small pill for skills/tools, uppercase, wide letter-spacing, Space Grotesk
-- `GrainOverlay` — CSS/SVG noise texture overlay at very low opacity for analog warmth
-- `RevealOnScroll` — IntersectionObserver wrapper, subtle fade-up on enter
+- **Button** — three variants:
+  - Primary: brass fill (#C8956A), inverse text, hover to #D4A87A
+  - Secondary: magenta border (#C278A0), transparent bg, hover fill
+  - Ghost: text only, hover underline or subtle bg
+  - All: 44px min height, focus ring, keyboard accessible
+- **Tag** — small pill, uppercase, wide letter-spacing (0.1em), Space Grotesk, bg.subtle bg, text.secondary text, border.subtle border
+
+### Effects
+- **GrainOverlay** — CSS/SVG film grain texture at very low opacity (~0.03-0.05) over the page for analog warmth. Should be barely perceptible.
+- **GlowEffect** — ambient accent-colored radial gradient behind hero text or key elements. Brass glow for hero, magenta glow available for secondary elements.
+- **RevealOnScroll** — IntersectionObserver wrapper component. Fade up with slight translateY (20px → 0) over 600ms with ease-out. Trigger once.
 
 ## Image Placeholders
-We don't have final images yet. When an image is needed, render a styled placeholder div that:
-- Has the correct aspect ratio (16:9 for heroes, flexible for inline)
-- Uses bg.elevated (#1A1A1E) background with a subtle border
-- Shows the alt text / description centered in text.muted color
-- Includes a small camera or image icon (can use an SVG or emoji)
-This should look intentional, not broken — like a design-system-aware placeholder.
+No final images yet. When an image is needed, render a styled placeholder:
+- Correct aspect ratio (16:9 heroes, 4:3 or flexible inline)
+- bg.elevated (#1A1A1E) background
+- border.subtle (#2A2A30) 1px border
+- Descriptive text centered in text.muted
+- Small image icon above the text
+- Should look intentional and designed, not broken
+- Alt text from the case study data should be applied
 
 ## Case Study Data
-Case study content is defined in `src/lib/tokens.ts` as typed data. There are 3 main case studies + 1 meta case study:
-1. **AI Leadership & Organizational Velocity** — AI strategy, tooling evangelism, org change
-2. **Instant SOW / Rehab Co-Pilot** — GenAI workflow for scope-of-work automation
-3. **Instant Document Review** — HITL transparency for AI-driven loan operations
-4. **Building This Portfolio** (meta) — documenting the process of building this site
+Defined in `src/lib/tokens.ts`. Three main + one meta:
+1. **AI Leadership** (slug: ai-leadership) — AI strategy, org change, tooling evangelism
+2. **Instant SOW** (slug: instant-sow) — GenAI workflow automation, document extraction
+3. **Instant Doc Review** (slug: instant-doc-review) — HITL transparency, auditability
+4. **Building This Portfolio** (slug: building-this-portfolio) — meta case study (in progress)
 
-## Code Style Preferences
-- Use TypeScript strictly — no `any` types
-- Prefer named exports for components
-- Use Tailwind utilities primarily, with custom classes only when Tailwind can't express the token
-- Keep components in `src/components/` organized by concern (layout/, content/, interactive/)
-- Use `cn()` helper (clsx + tailwind-merge) for conditional class composition
-- Prefer server components by default, add 'use client' only when needed for interactivity
-- Keep files focused — one component per file
+Each has: slug, title, subtitle, tags[], heroMetric?, heroImage (with placeholder descriptions), sections[].
 
-## What NOT to do
-- Don't use shadcn/ui or any component library — we're building from tokens
-- Don't use pure black (#000) or pure white (#FFF) anywhere
-- Don't use default Tailwind colors — everything should come from our token palette
-- Don't add dependencies without asking — keep it lean
-- Don't create light mode styles (dark mode is the only mode for V1)
-- Don't over-engineer — this is a 48-hour sprint, ship over perfection
+## Code Style
+- TypeScript strictly — no `any`
+- Named exports for components
+- Tailwind utilities primary, custom classes only when needed
+- Components in `src/components/` organized: layout/, content/, interactive/, effects/
+- `cn()` for conditional classes
+- Server components default, `'use client'` only for interactivity
+- One component per file
+- No shadcn/ui or component libraries — built from tokens
+- No pure black (#000) or pure white (#FFF) anywhere
+- No default Tailwind colors — everything from token palette
+- No unnecessary dependencies — keep it lean

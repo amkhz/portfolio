@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Podkova, Space_Grotesk, Didact_Gothic } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { GrainOverlay } from "@/components/effects/GrainOverlay";
 import "./globals.css";
 
 // Display font — hero text, big statements, case study titles
@@ -41,8 +42,9 @@ export default function RootLayout({
       <body
         className={`${podkova.variable} ${spaceGrotesk.variable} ${didactGothic.variable} antialiased`}
       >
+        <GrainOverlay />
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main" tabIndex={-1} className="min-h-screen outline-none">{children}</main>
         <Footer />
       </body>
     </html>
