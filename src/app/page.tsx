@@ -1,65 +1,131 @@
-import Image from "next/image";
+import { Container } from "@/components/layout/Container";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero section — test the type system */}
+      <section className="py-24 sm:py-32">
+        <Container>
+          {/* Podkova display — hero headline */}
+          <h1 className="font-display text-4xl leading-tight tracking-tight text-text-primary sm:text-5xl">
+            Designing the future,
+            <br />
+            <span className="text-accent-primary">one pixel at a time.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          {/* Space Grotesk — section subheading */}
+          <h2 className="mt-6 font-heading text-xl font-medium tracking-wide text-text-secondary sm:text-2xl">
+            Lead Product Designer &middot; AI-Powered Enterprise Experiences
+          </h2>
+
+          {/* Didact Gothic — body paragraph */}
+          <p className="mt-8 max-w-[65ch] font-body text-lg leading-normal text-text-secondary">
+            I help teams ship products that feel human, even when they&apos;re
+            powered by machine learning. From organizational AI strategy to
+            hands-on prototyping, I bridge the gap between what&apos;s
+            technically possible and what&apos;s genuinely useful.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+          {/* Visual divider */}
+          <div className="mt-12 h-px w-24 bg-accent-primary" />
+
+          {/* Type system verification block */}
+          <div className="mt-16 rounded-lg border border-border-subtle bg-bg-base p-8">
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-text-muted">
+              Type System Check
+            </h3>
+
+            <div className="mt-6 space-y-6">
+              {/* Display / Podkova */}
+              <div>
+                <span className="font-heading text-xs font-medium uppercase tracking-wider text-accent-primary">
+                  Podkova &middot; Display
+                </span>
+                <p className="mt-2 font-display text-3xl leading-tight tracking-tight text-text-primary">
+                  The quick brown fox jumps over the lazy dog
+                </p>
+              </div>
+
+              {/* Heading / Space Grotesk */}
+              <div>
+                <span className="font-heading text-xs font-medium uppercase tracking-wider text-secondary-primary">
+                  Space Grotesk &middot; Heading
+                </span>
+                <p className="mt-2 font-heading text-2xl font-semibold leading-snug text-text-primary">
+                  The quick brown fox jumps over the lazy dog
+                </p>
+              </div>
+
+              {/* Body / Didact Gothic */}
+              <div>
+                <span className="font-heading text-xs font-medium uppercase tracking-wider text-text-muted">
+                  Didact Gothic &middot; Body
+                </span>
+                <p className="mt-2 max-w-[65ch] font-body text-base leading-normal text-text-secondary">
+                  The quick brown fox jumps over the lazy dog. This is the body
+                  font at base size with normal line-height, set at a
+                  comfortable reading width of roughly 65 characters. It should
+                  feel clean, humanist, and easy on the eyes.
+                </p>
+              </div>
+            </div>
+
+            {/* Color palette preview */}
+            <div className="mt-10">
+              <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-text-muted">
+                Color Palette
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-bg-deep ring-1 ring-border-subtle" />
+                  <span className="font-heading text-xs text-text-muted">deep</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-bg-base ring-1 ring-border-subtle" />
+                  <span className="font-heading text-xs text-text-muted">base</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-bg-elevated ring-1 ring-border-subtle" />
+                  <span className="font-heading text-xs text-text-muted">elevated</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-bg-subtle ring-1 ring-border-subtle" />
+                  <span className="font-heading text-xs text-text-muted">subtle</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-accent-primary" />
+                  <span className="font-heading text-xs text-text-muted">brass</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-12 rounded-md bg-secondary-primary" />
+                  <span className="font-heading text-xs text-text-muted">teal</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Shadow preview */}
+            <div className="mt-10">
+              <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-text-muted">
+                Shadows &amp; Glows
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-6">
+                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-md">
+                  <span className="font-heading text-xs text-text-muted">md</span>
+                </div>
+                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-lg">
+                  <span className="font-heading text-xs text-text-muted">lg</span>
+                </div>
+                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-glow-brass">
+                  <span className="font-heading text-xs text-text-muted">brass</span>
+                </div>
+                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-bg-elevated shadow-glow-teal">
+                  <span className="font-heading text-xs text-text-muted">teal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
