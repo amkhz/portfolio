@@ -162,7 +162,8 @@ export interface CaseStudy {
     alt: string;              // descriptive alt text
     placeholder?: string;     // description of what image should be (for placeholders)
   };
-  sections: CaseStudySection[];
+  // Metadata only. Section content is sourced from src/lib/case-study-content.ts.
+  sections?: CaseStudySection[];
 }
 
 export interface CaseStudySection {
@@ -177,12 +178,12 @@ export interface CaseStudySection {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'ai-leadership',
-    title: 'AI Leadership & Organizational Velocity',
-    subtitle: 'Pioneering AI adoption through strategy, tooling, and the future of design control.',
-    tags: ['AI Strategy', 'Design Leadership', 'Organizational Change', 'Prototyping'],
+    title: 'Pioneering AI Adoption',
+    subtitle: 'Strategy, tooling, and the future of design control.',
+    tags: ['Strategy', 'AI/ML', 'Design Leadership', 'Organizational Change'],
     heroMetric: {
       value: '100%',
-      label: 'team AI tool adoption achieved',
+      label: 'team AI tool adoption',
     },
     heroImage: {
       src: '/images/placeholder-ai-leadership.jpg',
@@ -193,9 +194,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'instant-sow',
-    title: 'Instant Scope of Work / Rehab Co-Pilot',
-    subtitle: 'Cutting scope-of-work completion time in half with AI-powered document extraction and generation.',
-    tags: ['GenAI', 'Enterprise UX', 'Workflow Design', 'ML Integration'],
+    title: 'Instant Scope of Work',
+    subtitle: 'AI-augmented scope of work for renovation projects.',
+    tags: ['Product Design', 'GenAI', 'Efficiency', 'B2B'],
     heroMetric: {
       value: '50%',
       label: 'target reduction in SOW completion time',
@@ -210,8 +211,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'instant-doc-review',
     title: 'Instant Document Review',
-    subtitle: 'Transforming a black-box AI into a transparent, auditable tool for loan operations.',
-    tags: ['HITL Design', 'Systems Design', 'Auditability', 'AI Transparency'],
+    subtitle: 'Transparent, auditable AI for loan document processing.',
+    tags: ['Product Design', 'HITL', 'Enterprise', 'AI Ops'],
     heroMetric: {
       value: '75%',
       label: 'reduction in document review time',
@@ -229,8 +230,12 @@ export const caseStudies: CaseStudy[] = [
 export const metaCaseStudy: CaseStudy = {
   slug: 'building-this-portfolio',
   title: 'Building This Portfolio',
-  subtitle: 'How I built a design system and shipped a portfolio in 48 hours using AI-powered workflows.',
-  tags: ['Design Systems', 'AI Workflow', 'Next.js', 'Design Tokens', 'Meta'],
+  subtitle: 'Design system to deployed site in 48 hours using AI-powered workflows.',
+  tags: ['Design Systems', 'AI Workflow', 'Meta', 'Process'],
+  heroMetric: {
+    value: '48 hours',
+    label: 'tokens to production',
+  },
   heroImage: {
     src: '/images/placeholder-meta.jpg',
     alt: 'Side-by-side of token definition code and the resulting rendered portfolio components',

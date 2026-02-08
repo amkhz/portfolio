@@ -10,6 +10,7 @@ import { MetricCard } from "./MetricCard";
 import { MetricGrid } from "./MetricGrid";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { QuoteBlock } from "./QuoteBlock";
+import { Tag } from "@/components/interactive/Tag";
 import { GlowEffect } from "@/components/effects/GlowEffect";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 
@@ -20,16 +21,18 @@ interface CaseStudyPageProps {
 }
 
 /** Renders one content section based on its type, wrapped in RevealOnScroll */
-function renderSection(section: CaseStudySection, index: number) {
+function renderSection(
+  section: CaseStudySection,
+  index: number,
+  headingAs?: "h2" | "h3"
+) {
   switch (section.type) {
     case "text":
       return (
         <RevealOnScroll key={index}>
           <div>
-            {section.heading && (
-              <SectionHeading as={index === 0 ? "h2" : "h3"}>
-                {section.heading}
-              </SectionHeading>
+            {section.heading && headingAs && (
+              <SectionHeading as={headingAs}>{section.heading}</SectionHeading>
             )}
             <TextBlock>{section.body}</TextBlock>
           </div>
@@ -53,8 +56,8 @@ function renderSection(section: CaseStudySection, index: number) {
       return (
         <RevealOnScroll key={index}>
           <div>
-            {section.heading && (
-              <SectionHeading as="h3">{section.heading}</SectionHeading>
+            {section.heading && headingAs && (
+              <SectionHeading as={headingAs}>{section.heading}</SectionHeading>
             )}
             <MetricGrid>
               {section.items.map((item, i) => (
@@ -75,8 +78,8 @@ function renderSection(section: CaseStudySection, index: number) {
       return (
         <RevealOnScroll key={index}>
           <div>
-            {section.heading && (
-              <SectionHeading as="h3">{section.heading}</SectionHeading>
+            {section.heading && headingAs && (
+              <SectionHeading as={headingAs}>{section.heading}</SectionHeading>
             )}
             <ComparisonBlock before={section.before} after={section.after} />
           </div>
@@ -104,6 +107,27 @@ export function CaseStudyPageTemplate({ slug }: CaseStudyPageProps) {
   if (!study) notFound();
 
   const sections = caseStudyContent[slug] ?? [];
+  const firstHeadingIndex = sections.findIndex(
+    (section) =>
+      "heading" in section &&
+      typeof section.heading === "string" &&
+      section.heading.length > 0
+  );
+
+  const sectionNodes = sections.map((section, index) => {
+    const hasHeading =
+      "heading" in section &&
+      typeof section.heading === "string" &&
+      section.heading.length > 0;
+
+    const headingAs = hasHeading
+      ? index === firstHeadingIndex
+        ? "h2"
+        : "h3"
+      : undefined;
+
+    return renderSection(section, index, headingAs);
+  });
 
   return (
     <article>
@@ -124,12 +148,9 @@ export function CaseStudyPageTemplate({ slug }: CaseStudyPageProps) {
           {/* Tags */}
           <div className="mb-6 flex flex-wrap gap-2">
             {study.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border-subtle bg-bg-elevated px-3 py-1 font-heading text-xs font-medium uppercase tracking-wider text-text-muted"
-              >
+              <Tag key={tag}>
                 {tag}
-              </span>
+              </Tag>
             ))}
           </div>
 
@@ -170,7 +191,7 @@ export function CaseStudyPageTemplate({ slug }: CaseStudyPageProps) {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="flex flex-col gap-12">
-            {sections.map((section, index) => renderSection(section, index))}
+            {sectionNodes}
           </div>
 
           {/* Bottom navigation — back to work listing */}

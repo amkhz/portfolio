@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { Tag } from "@/components/interactive/Tag";
 import { caseStudies, metaCaseStudy } from "@/lib/tokens-ts";
 
 export const metadata: Metadata = {
@@ -48,12 +49,12 @@ export default function WorkPage() {
               {/* Tags — Space Grotesk, uppercase pill style */}
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span
+                  <Tag
                     key={tag}
-                    className="rounded-full border border-border-subtle bg-bg-elevated px-3 py-1 font-heading text-xs font-medium uppercase tracking-wider text-text-muted transition-colors duration-200 group-hover:border-border-strong"
+                    className="transition-colors duration-200 group-hover:border-border-strong"
                   >
                     {tag}
-                  </span>
+                  </Tag>
                 ))}
               </div>
             </Link>

@@ -27,7 +27,8 @@ export function AboutSnippet() {
               I design AI-powered tools for lending and financial services,
               focusing on the intersection of automation and human oversight. My
               work turns complex operational workflows into transparent,
-              auditable experiences that scale.
+              auditable experiences that scale. Currently exploring how design
+              systems and AI-driven development can accelerate product velocity.
             </p>
 
             <div className="mt-8">

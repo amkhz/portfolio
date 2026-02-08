@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/tokens-ts";
+import { Tag } from "@/components/interactive/Tag";
 
 interface ProjectCardProps {
   study: CaseStudy;
@@ -70,12 +71,12 @@ export function ProjectCard({ study }: ProjectCardProps) {
         {/* Tags row */}
         <div className="mt-3 flex flex-wrap gap-2">
           {study.tags.map((tag) => (
-            <span
+            <Tag
               key={tag}
-              className="rounded-full border border-border-subtle bg-bg-subtle px-3 py-1 font-heading text-xs uppercase tracking-wider text-text-secondary transition-colors duration-normal group-hover:border-border-strong"
+              className="bg-bg-subtle transition-colors duration-normal group-hover:border-border-strong"
             >
               {tag}
-            </span>
+            </Tag>
           ))}
         </div>
       </div>
