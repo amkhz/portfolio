@@ -75,7 +75,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-challenge-diagram.jpg',
+      src: '/images/diagram.png',
       alt: 'Diagram showing the dual challenge — tactical tooling gap and strategic design control shift',
       placeholder: 'Diagram: tactical (tooling gap) on one side, strategic (design control shifting) on the other — showing how both were addressed as one initiative',
       aspect: '16:9',
@@ -87,14 +87,14 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-six-step-workflow.jpg',
+      src: '/images/process.png',
       alt: 'The 6-step AI prototyping workflow: Define, Scope, Plan, Build, Test, Iterate',
       placeholder: 'Process diagram: Define → Scope → Plan → Build → Test → Iterate — the repeatable AI prototyping workflow taught in workshops',
       aspect: '16:9',
     },
     {
       type: 'image',
-      src: '/images/placeholder-training-slide.jpg',
+      src: '/images/anyone-can-do-it.png',
       alt: 'Workshop title slide: Building with AI Tools — Anyone Can Do It',
       placeholder: '"Building with AI Tools — Anyone Can Do It" — title slide from the AI workshop training deck',
       aspect: '16:9',
@@ -106,7 +106,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-prototype-examples.jpg',
+      src: '/images/outcomes.png',
       alt: 'Grid of prototype screenshots built during AI workshops — habit tracker, Pomodoro timer with Kanban',
       placeholder: 'Composed grid: 2-3 prototype screenshots from workshops — Daily Habit Tracker, Pomodoro Timer with Kanban, internal dashboard',
       aspect: '16:9',
@@ -118,7 +118,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-great-inversion.jpg',
+      src: '/images/big-flip.png',
       alt: 'The Big Flip diagram — showing the reduction of designer control as AI agency increases',
       placeholder: 'Conceptual diagram: "The Big Flip" — designer control decreasing as AI agency increases, with the new role being guardrail definition',
       aspect: '16:9',
@@ -157,7 +157,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       before: {
         label: 'Before',
         image: {
-          src: '/images/placeholder-sow-manual.jpg',
+          src: '/images/legacy-sow.png',
           alt: '42-field manual SOW entry form',
           placeholder: 'Legacy SOW form — 42 fields, manual entry, no guidance or intelligence',
         },
@@ -166,7 +166,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       after: {
         label: 'After',
         image: {
-          src: '/images/placeholder-sow-toolbox.jpg',
+          src: '/images/tool-box.png',
           alt: 'My SOW Toolbox interface with three AI-assisted paths',
           placeholder: '"My SOW Toolbox" — three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW',
         },
@@ -180,14 +180,14 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-sow-flow.jpg',
+      src: '/images/sow-flow-diagram.png',
       alt: 'Flow diagram showing three SOW paths converging into the same review form',
       placeholder: 'Flow diagram: three paths (Upload, Describe, Recycle) converging into the same SOW form → human review → submission',
       aspect: '16:9',
     },
     {
       type: 'image',
-      src: '/images/placeholder-sow-upload.jpg',
+      src: '/images/feature-flow.png',
       alt: 'Document upload UI showing file selection, extraction progress, and pre-filled results',
       placeholder: 'UI: document upload experience — file selection → extraction progress indicator → pre-filled SOW fields with confidence indicators',
       aspect: '16:9',
@@ -199,7 +199,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-sow-ops-flag.jpg',
+      src: '/images/detail-ops.png',
       alt: 'Operations view showing AI-generated flag on submitted SOW',
       placeholder: 'Ops-side view: SOW submission with "AI-generated" flag visible, feedback mechanism for accuracy reporting',
       aspect: '16:9',
@@ -241,7 +241,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-idr-before.jpg',
+      src: '/images/before-flow.png',
       alt: 'Diagram showing the fragmented before-state workflow for document review',
       placeholder: 'Before-state flow: analyst jumping between AI output → separate document viewer → conditions system → manual cross-referencing. Pain points annotated.',
       aspect: '16:9',
@@ -253,14 +253,14 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'image',
-      src: '/images/placeholder-idr-admin-page.jpg',
+      src: '/images/admin-page-tasks.png',
       alt: 'IDR Admin Page showing extracted data, document viewer, and conditions panel',
       placeholder: 'Property Admin Page — three-panel layout: extracted data fields (left), inline document viewer (right), consolidated conditions summary (below)',
       aspect: '16:9',
     },
     {
       type: 'image',
-      src: '/images/placeholder-idr-doc-viewer.jpg',
+      src: '/images/detail-mvp-work.png',
       alt: 'Close-up of inline document viewer with highlighted field comparison',
       placeholder: 'Detail: inline document viewer with a data field highlighted, showing analyst comparing extracted value to source document',
       aspect: '4:3',
@@ -268,18 +268,18 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'V2 — Borrower Self-Service',
-      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks — starting with name corrections on documents — and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThis is the first task type, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, and document-driven is a candidate for borrower self-service — and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is an Instant Review Hub — a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, title, appraisal — each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
+      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks — starting with borrower name and entity corrections — and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThis is the first task type, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, and document-driven is a candidate for borrower self-service — and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is an Instant Review Hub — a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, title, appraisal — each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
     },
     {
       type: 'image',
-      src: '/images/placeholder-idr-borrower-task.jpg',
+      src: '/images/borrower-flow.png',
       alt: 'Borrower self-service task flow — AI generates task, borrower uploads corrected document, AI confirms',
       placeholder: 'UI flow: AI generates task → borrower receives notification → uploads corrected document → AI reviews → confirms or requests again',
       aspect: '16:9',
     },
     {
       type: 'image',
-      src: '/images/placeholder-idr-hub-vision.jpg',
+      src: '/images/future-vision.png',
       alt: 'Instant Review Hub concept showing multiple document domains in unified view',
       placeholder: 'Future vision: Instant Review Hub — multiple domains (Property, Member/Entities, Title, Appraisal) feeding into one review interface with per-source escape hatches',
       aspect: '16:9',
@@ -295,7 +295,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document — they\'re verifying the AI\'s work, not redoing it. Every decision is versioned, giving compliance reviewers a clear audit trail. V2 then took it further: AI-generated tasks now shift routine work directly to borrowers, starting with document name corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale — any routine, data-driven task across any loan domain is a candidate for self-service.',
+      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document — they\'re verifying the AI\'s work, not redoing it. Every decision is versioned, giving compliance reviewers a clear audit trail. V2 then took it further: AI-generated tasks now shift routine work directly to borrowers, starting with borrower name and entity corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale — any routine, data-driven task across any loan domain is a candidate for self-service.',
     },
   ],
 

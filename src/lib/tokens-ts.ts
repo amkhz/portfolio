@@ -186,7 +186,7 @@ export const caseStudies: CaseStudy[] = [
       label: 'team AI tool adoption',
     },
     heroImage: {
-      src: '/images/placeholder-ai-leadership.jpg',
+      src: '/images/intro.png',
       alt: 'AI workshop presentation showing the 6-step prototyping process',
       placeholder: 'Screenshot of "Building with AI Tools" presentation title slide, or a composite showing the Define→Scope→Plan→Build→Test→Iterate workflow',
     },
@@ -202,7 +202,7 @@ export const caseStudies: CaseStudy[] = [
       label: 'target reduction in SOW completion time',
     },
     heroImage: {
-      src: '/images/placeholder-instant-sow.jpg',
+      src: '/images/sow-toolbox.png',
       alt: 'My SOW Toolbox interface showing Upload, Describe, and Recycle options',
       placeholder: 'High-fidelity mockup of the "My Scope of Work Toolbox" UI showing the three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW',
     },
@@ -218,7 +218,7 @@ export const caseStudies: CaseStudy[] = [
       label: 'reduction in document review time',
     },
     heroImage: {
-      src: '/images/placeholder-idr.jpg',
+      src: '/images/idr-hifi.png',
       alt: 'Property Admin Page showing extracted data alongside original document viewer',
       placeholder: 'High-fidelity mockup of the Property Admin Page with document viewer panel, extracted data fields, and rule override controls',
     },

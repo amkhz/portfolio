@@ -1,7 +1,7 @@
 # Justin Hernandez
 **Lead Product Designer | AI & Design Specialist**
 
-Grand Rapids, Michigan | justin@dtls.us | +1 219.588.3056 | [dtls.us](https://dtls.us) | [linkedin.com/in/justinah](https://linkedin.com/in/justinah)
+justin@justinh.design | +1 219.588.3056 | [justinh.design](https://justinh.design) | [linkedin.com/in/justinah](https://linkedin.com/in/justinah)
 
 ## Profile
 
@@ -53,8 +53,6 @@ Led design for Marketo Projects workflow management tool. Contributed to design 
 **Design:** Product Design, User Research, Design Strategy, Service Design, Design Systems, Information Architecture, Interaction Design, Prototyping, Usability Testing
 
 **AI & Automation:** GenAI Product Design, Prompt Engineering, AI-Powered Automation, Intelligent Document Processing, Predictive Personalization
-
-**Tools:** Figma, Sketch, Adobe Creative Suite, Webflow, Design System Management
 
 **Leadership:** Team Management, Mentorship, Cross-Functional Leadership, Strategic Partnership, Stakeholder Communication
 

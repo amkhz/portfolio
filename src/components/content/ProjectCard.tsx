@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { CaseStudy } from "@/lib/tokens-ts";
 import { Tag } from "@/components/interactive/Tag";
 
@@ -28,26 +29,44 @@ function ImageIcon() {
 }
 
 export function ProjectCard({ study }: ProjectCardProps) {
+  const hasRealImage =
+    typeof study.heroImage.src === "string" &&
+    study.heroImage.src.length > 0 &&
+    !study.heroImage.src.includes("placeholder-");
+
   return (
     <Link
       href={`/work/${study.slug}`}
       className="group block overflow-hidden rounded-lg border border-border-subtle bg-bg-base transition-all duration-normal hover:-translate-y-0.5 hover:border-accent-primary hover:shadow-glow-brass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
     >
       {/* Image placeholder — 16:9 aspect ratio */}
-      <div
-        className="relative flex aspect-video items-center justify-center border-b border-border-subtle bg-bg-elevated"
-        role="img"
-        aria-label={study.heroImage.alt}
-      >
-        <div className="flex flex-col items-center gap-2 px-6">
-          <span className="text-text-muted">
-            <ImageIcon />
-          </span>
-          <span className="text-center font-body text-sm leading-normal text-text-muted">
-            {study.heroImage.placeholder}
-          </span>
+      {hasRealImage ? (
+        <div className="relative aspect-video overflow-hidden border-b border-border-subtle bg-bg-elevated">
+          <Image
+            src={study.heroImage.src}
+            alt={study.heroImage.alt}
+            fill
+            quality={90}
+            sizes="(min-width: 1200px) 380px, (min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
         </div>
-      </div>
+      ) : (
+        <div
+          className="relative flex aspect-video items-center justify-center border-b border-border-subtle bg-bg-elevated"
+          role="img"
+          aria-label={study.heroImage.alt}
+        >
+          <div className="flex flex-col items-center gap-2 px-6">
+            <span className="text-text-muted">
+              <ImageIcon />
+            </span>
+            <span className="text-center font-body text-sm leading-normal text-text-muted">
+              {study.heroImage.placeholder}
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* Card content */}
       <div className="p-4">

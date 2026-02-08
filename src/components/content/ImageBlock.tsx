@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ImageBlockProps {
@@ -15,45 +16,68 @@ const aspectMap = {
 } as const;
 
 export function ImageBlock({
+  src,
   alt,
   placeholder,
   caption,
   aspect = "16:9",
 }: ImageBlockProps) {
   const displayText = placeholder || alt;
+  const hasRealImage =
+    typeof src === "string" &&
+    src.length > 0 &&
+    !src.includes("placeholder-");
 
   return (
     <figure className="my-8">
-      <div
-        role="img"
-        aria-label={alt}
-        className={cn(
-          "flex flex-col items-center justify-center rounded-lg border border-border-subtle bg-bg-elevated",
-          aspectMap[aspect]
-        )}
-      >
-        {/* Simple image icon */}
-        <svg
-          aria-hidden="true"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="mb-3 text-text-muted"
+      {hasRealImage ? (
+        <div
+          className={cn(
+            "relative overflow-hidden rounded-lg border border-border-subtle bg-bg-elevated",
+            aspectMap[aspect]
+          )}
         >
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            quality={90}
+            sizes="(min-width: 1200px) 1100px, (min-width: 768px) 92vw, 100vw"
+            className="object-contain"
+          />
+        </div>
+      ) : (
+        <div
+          role="img"
+          aria-label={alt}
+          className={cn(
+            "flex flex-col items-center justify-center rounded-lg border border-border-subtle bg-bg-elevated",
+            aspectMap[aspect]
+          )}
+        >
+          {/* Simple image icon */}
+          <svg
+            aria-hidden="true"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mb-3 text-text-muted"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
 
-        <span className="max-w-[48ch] px-6 text-center font-body text-sm leading-normal text-text-muted">
-          {displayText}
-        </span>
-      </div>
+          <span className="max-w-[48ch] px-6 text-center font-body text-sm leading-normal text-text-muted">
+            {displayText}
+          </span>
+        </div>
+      )}
 
       {caption && (
         <figcaption className="mt-3 text-center font-body text-sm text-text-muted">
