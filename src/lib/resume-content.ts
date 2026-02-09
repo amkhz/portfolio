@@ -37,8 +37,8 @@ export interface ResumeModel {
   rawSections: Array<{ heading: string; lines: string[] }>;
 }
 
-function stripMdEmphasis(value: string): string {
-  return value.replace(/^\*\*|\*\*$/g, "").trim();
+function stripMdStrong(value: string): string {
+  return value.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 }
 
 function parseInlineLink(token: string): ResumeContactItem {
@@ -76,12 +76,19 @@ function parseHeader(lines: string[]): {
   contacts: ResumeContactItem[];
 } {
   const name = lines.find((line) => line.startsWith("# "))?.replace("# ", "").trim() ?? "";
-  const title = stripMdEmphasis(
+  const title = stripMdStrong(
     lines.find((line) => line.startsWith("**") && line.endsWith("**")) ?? ""
   );
 
   const contactLine = lines
-    .find((line) => line.includes("|") && !line.startsWith("## "))
+    .find((line) => {
+      const trimmed = line.trim();
+      if (!trimmed.includes("|")) return false;
+      if (trimmed.startsWith("#")) return false;
+      if (trimmed.startsWith("## ")) return false;
+      if (trimmed.startsWith("**") && trimmed.endsWith("**")) return false;
+      return trimmed.includes("@") || trimmed.includes("](");
+    })
     ?.trim();
 
   const contacts = contactLine
@@ -131,7 +138,7 @@ function parseExperience(lines: string[]): ResumeExperience[] {
     if (!current) continue;
 
     if (line.startsWith("**") && line.endsWith("**")) {
-      current.date = stripMdEmphasis(line);
+      current.date = stripMdStrong(line);
       continue;
     }
 
@@ -141,7 +148,7 @@ function parseExperience(lines: string[]): ResumeExperience[] {
     }
 
     if (!current.summary) {
-      current.summary = line.trim();
+      current.summary = stripMdStrong(line);
     }
   }
 
@@ -154,7 +161,7 @@ function parseEducation(lines: string[]): ResumeEducationItem[] {
   return block
     .filter((line) => line.startsWith("**"))
     .map((line) => {
-      const parts = line.split("|").map((part) => stripMdEmphasis(part.trim()));
+      const parts = line.split("|").map((part) => stripMdStrong(part.trim()));
       return {
         degree: parts[0] ?? "",
         institution: parts[1] ?? "",
@@ -168,8 +175,11 @@ function parseSkillGroups(lines: string[]): ResumeSkillGroup[] {
   return block
     .filter((line) => line.startsWith("**"))
     .map((line) => {
-      const match = line.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
-      if (!match) return { label: stripMdEmphasis(line), items: [] };
+      const match =
+        line.match(/^\*\*(.+?):\*\*\s*(.+)$/) ??
+        line.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+
+      if (!match) return { label: stripMdStrong(line), items: [] };
 
       return {
         label: match[1].trim(),
@@ -183,7 +193,7 @@ function parseSkillGroups(lines: string[]): ResumeSkillGroup[] {
 
 function parseProfessionalDevelopment(lines: string[]): string[] {
   const block = sectionLines(lines, "Professional Development");
-  return block;
+  return block.map((line) => stripMdStrong(line));
 }
 
 function parseRawSections(lines: string[]): Array<{ heading: string; lines: string[] }> {

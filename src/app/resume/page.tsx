@@ -40,7 +40,7 @@ export default async function ResumePage() {
                 Resume
               </p>
               <p className="mt-2 font-body text-sm text-text-secondary">
-                Web version from `public/1pageresume.md`
+                Web version generated from Markdown
               </p>
             </div>
 

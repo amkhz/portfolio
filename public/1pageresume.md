@@ -1,7 +1,7 @@
 # Justin Hernandez
 **Lead Product Designer | AI & Design Specialist**
 
-justin@justinh.design | +1 219.588.3056 | [justinh.design](https://justinh.design) | [linkedin.com/in/justinah](https://linkedin.com/in/justinah)
+justin@justinh.design | [justinh.design](https://justinh.design) | [linkedin.com/in/justinah](https://linkedin.com/in/justinah)
 
 ## Profile
 
