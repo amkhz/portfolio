@@ -237,9 +237,9 @@ export const metaCaseStudy: CaseStudy = {
     label: 'tokens to production',
   },
   heroImage: {
-    src: '/images/placeholder-meta.jpg',
-    alt: 'Side-by-side of token definition code and the resulting rendered portfolio components',
-    placeholder: 'Composite showing: tokens.ts code on left, rendered portfolio components on right, with an arrow or visual connection between them',
+    src: '/images/meta.png',
+    alt: 'Composite preview of the portfolio build process and final UI',
+    placeholder: 'Meta case study hero image showing process and outcome side by side',
   },
   sections: [],
 };

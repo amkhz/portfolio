@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/interactive/Button";
 
 export const metadata: Metadata = {
-  title: "About — Justin Hernandez",
+  title: "About",
   description:
     "Lead product designer specializing in AI-powered enterprise product design, design leadership, and human-centered automation.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About | Justin Hernandez",
+    description:
+      "Lead product designer specializing in AI-powered enterprise product design, design leadership, and human-centered automation.",
+    url: "/about",
+    images: ["/images/about.jpeg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/about.jpeg"],
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── 1. Header section ── */}
+      {/* -- 1. Header section -- */}
       <section className="pt-24 pb-16 sm:pt-32 sm:pb-20">
         <Container>
           <span className="font-heading text-xs uppercase tracking-wider text-text-muted">
@@ -23,19 +38,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── 2. Photo + Professional Bio ── */}
+      {/* -- 2. Photo + Professional Bio -- */}
       <section className="pb-16 sm:pb-20">
         <Container>
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[320px_1fr] md:gap-16">
-            {/* Photo placeholder */}
-            <div
-              role="img"
-              aria-label="Portrait photo of Justin Hernandez, design leader"
-              className="aspect-square w-full max-w-[320px] rounded-lg border border-border-subtle bg-bg-elevated flex items-center justify-center"
-            >
-              <span className="px-4 text-center font-body text-sm leading-normal text-text-muted">
-                Justin A. Hernandez, design leader
-              </span>
+            {/* Portrait */}
+            <div className="relative aspect-square w-full max-w-[320px] overflow-hidden rounded-lg border border-border-subtle bg-bg-elevated">
+              <Image
+                src="/images/about.jpeg"
+                alt="Portrait photo of Justin Hernandez, design leader"
+                fill
+                quality={92}
+                sizes="(min-width: 768px) 320px, 100vw"
+                className="object-cover"
+              />
             </div>
 
             {/* Professional bio */}
@@ -45,7 +61,7 @@ export default function AboutPage() {
                 multiplier, and collaborator. I&apos;ve been designing for
                 digital products since 2010, across healthcare, financial
                 services, e-commerce, non-profit, marketing automation, and
-                human capital management — mostly enterprise, mostly complex,
+                human capital management -- mostly enterprise, mostly complex,
                 always interesting.
               </p>
               <p>
@@ -54,7 +70,7 @@ export default function AboutPage() {
                 United States. We make complex things efficient and satisfying to
                 use, which is an interesting challenge in an equally challenging
                 industry. My recent focus has been on AI-augmented lending
-                tools — the kind of products where a bad interaction isn&apos;t
+                tools -- the kind of products where a bad interaction isn&apos;t
                 just frustrating, it&apos;s a compliance risk or a delayed
                 closing.
               </p>
@@ -63,7 +79,7 @@ export default function AboutPage() {
                 organization, building the training, the prototyping workflow,
                 and the strategic framework for how design operates when the
                 interface starts thinking for itself. That work shaped the
-                products I designed — embedding principles like decision
+                products I designed -- embedding principles like decision
                 versioning, human-in-the-loop review, and auditable AI directly
                 into our product requirements. I love to observe and listen, to
                 question and hypothesize, to learn, and to iterate.
@@ -78,7 +94,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── 3. Personal section ── */}
+      {/* -- 3. Personal section -- */}
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="font-display text-2xl leading-snug tracking-tight text-text-primary">
@@ -89,7 +105,7 @@ export default function AboutPage() {
             <p>
               I live in Michigan in a 1950&apos;s ranch house with my wonderful
               wife. We&apos;re both fortunate to work from home, which makes it
-              easier to keep finding new projects to work on together — right now
+              easier to keep finding new projects to work on together -- right now
               we&apos;re renovating the house and cultivating our back yard into
               a place we can grow food and flowers and watch our animals run
               around. Our rascally dog Carlos and our cats Pistachio and Larry
@@ -108,13 +124,13 @@ export default function AboutPage() {
             Talk to me about UX, art, music, design, architecture, record
             collecting, hiking, sustainable living, cooking and dining, all
             things Porsche, video games, cybersecurity, home networking, open
-            source intelligence, aerospace — or even cryptozoology. And probably
+            source intelligence, aerospace -- or even cryptozoology. And probably
             a lot of other stuff too.
           </p>
         </Container>
       </section>
 
-      {/* ── 4. What I Believe section ── */}
+      {/* -- 4. What I Believe section -- */}
       <section className="py-16 sm:py-20">
         <Container>
           <h2 className="mb-10 font-display text-2xl leading-snug tracking-tight text-text-primary">
@@ -148,7 +164,7 @@ export default function AboutPage() {
                   Accessibility isn&apos;t a feature.
                 </strong>{" "}
                 It&apos;s the baseline. Every token, component, and interaction
-                in my work meets WCAG 2.1 AA — not because it&apos;s required,
+                in my work meets WCAG 2.1 AA -- not because it&apos;s required,
                 but because design that excludes people isn&apos;t design.
               </p>
             </div>
@@ -156,7 +172,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── 5. Contact / CTA section ── */}
+      {/* -- 5. Contact / CTA section -- */}
       <section className="py-16 pb-24 sm:py-20 sm:pb-32">
         <Container>
           <h2 className="font-display text-2xl leading-snug tracking-tight text-text-primary">
@@ -169,7 +185,7 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button variant="primary" href="mailto:hello@justinhernandez.design">
+            <Button variant="primary" href="mailto:justin@justinh.design">
               Email me
             </Button>
             <Button
@@ -185,3 +201,4 @@ export default function AboutPage() {
     </>
   );
 }
+

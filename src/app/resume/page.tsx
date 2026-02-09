@@ -8,9 +8,23 @@ import { ResumeExperienceItem } from "@/components/content/resume/ResumeExperien
 import { ResumeSkillGroup } from "@/components/content/resume/ResumeSkillGroup";
 
 export const metadata: Metadata = {
-  title: "Resume — Justin Hernandez",
+  title: "Resume",
   description:
     "Resume of Justin Hernandez, Lead Product Designer focused on AI-powered enterprise product design.",
+  alternates: {
+    canonical: "/resume",
+  },
+  openGraph: {
+    title: "Resume | Justin Hernandez",
+    description:
+      "Resume of Justin Hernandez, Lead Product Designer focused on AI-powered enterprise product design.",
+    url: "/resume",
+    images: ["/images/meta.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/meta.png"],
+  },
 };
 
 export default async function ResumePage() {
@@ -109,3 +123,4 @@ export default async function ResumePage() {
     </section>
   );
 }
+

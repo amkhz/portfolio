@@ -89,7 +89,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/process.png',
       alt: 'The 6-step AI prototyping workflow: Define, Scope, Plan, Build, Test, Iterate',
-      placeholder: 'Process diagram: Define → Scope → Plan → Build → Test → Iterate — the repeatable AI prototyping workflow taught in workshops',
+      placeholder: 'Process diagram: Define -> Scope -> Plan -> Build -> Test -> Iterate — the repeatable AI prototyping workflow taught in workshops',
       aspect: '16:9',
     },
     {
@@ -182,14 +182,14 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/sow-flow-diagram.png',
       alt: 'Flow diagram showing three SOW paths converging into the same review form',
-      placeholder: 'Flow diagram: three paths (Upload, Describe, Recycle) converging into the same SOW form → human review → submission',
+      placeholder: 'Flow diagram: three paths (Upload, Describe, Recycle) converging into the same SOW form -> human review -> submission',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/feature-flow.png',
       alt: 'Document upload UI showing file selection, extraction progress, and pre-filled results',
-      placeholder: 'UI: document upload experience — file selection → extraction progress indicator → pre-filled SOW fields with confidence indicators',
+      placeholder: 'UI: document upload experience — file selection -> extraction progress indicator -> pre-filled SOW fields with confidence indicators',
       aspect: '16:9',
     },
     {
@@ -216,7 +216,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       items: [
         { value: '31%', label: 'Eligible loans used SOW Recycle' },
         { value: '45%', label: 'Condition rate (down from 54%)' },
-        { value: '20 min → <10 min', label: 'Target SOW completion time' },
+        { value: '20 min -> <10 min', label: 'Target SOW completion time' },
         { value: '25%', label: 'Borrower opt-in target for AI path' },
       ],
     },
@@ -243,7 +243,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/before-flow.png',
       alt: 'Diagram showing the fragmented before-state workflow for document review',
-      placeholder: 'Before-state flow: analyst jumping between AI output → separate document viewer → conditions system → manual cross-referencing. Pain points annotated.',
+      placeholder: 'Before-state flow: analyst jumping between AI output -> separate document viewer -> conditions system -> manual cross-referencing. Pain points annotated.',
       aspect: '16:9',
     },
     {
@@ -274,7 +274,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/borrower-flow.png',
       alt: 'Borrower self-service task flow — AI generates task, borrower uploads corrected document, AI confirms',
-      placeholder: 'UI flow: AI generates task → borrower receives notification → uploads corrected document → AI reviews → confirms or requests again',
+      placeholder: 'UI flow: AI generates task -> borrower receives notification -> uploads corrected document -> AI reviews -> confirms or requests again',
       aspect: '16:9',
     },
     {
@@ -288,8 +288,8 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'metrics',
       heading: 'Results',
       items: [
-        { value: '20 min → 5-7 min', label: 'Document review time' },
-        { value: '16% → 30%', label: 'PSA auto-complete rate target' },
+        { value: '20 min -> 5-7 min', label: 'Document review time' },
+        { value: '16% -> 30%', label: 'PSA auto-complete rate target' },
         { value: '100%', label: 'Decision audit trail coverage' },
       ],
     },
@@ -309,8 +309,8 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      heading: 'Coming Soon',
-      body: 'This case study is being documented in real time as I build. Check back soon for the full story — including the token system decisions, AI prompt/output pairs, what needed human correction, and final Lighthouse scores.\n\nIn the meantime, you\'re looking at the result.',
+      heading: 'Process Snapshot',
+      body: 'This site was built from tokens first, then componentized into reusable layout, content, and interaction primitives. AI tooling accelerated scaffolding and iteration speed, while final quality, accessibility, and narrative accuracy were handled through manual review.\n\nThe next pass of this case study will publish the complete build log: token decisions, prompt-output pairs, correction loops, and final launch metrics.',
     },
   ],
 };
