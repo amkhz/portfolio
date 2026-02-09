@@ -18,11 +18,9 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Justin Hernandez featuring AI strategy, enterprise UX, and design systems case studies.",
     url: "/",
-    images: ["/images/meta.png"],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/meta.png"],
   },
 };
 

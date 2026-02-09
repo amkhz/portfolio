@@ -42,21 +42,12 @@ export const metadata: Metadata = {
     description:
       "Lead product designer specializing in AI-powered enterprise product design.",
     siteName: "Justin Hernandez Portfolio",
-    images: [
-      {
-        url: "/images/meta.png",
-        width: 1200,
-        height: 630,
-        alt: "Justin Hernandez portfolio preview",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Justin Hernandez | Product Designer",
     description:
       "Lead product designer specializing in AI-powered enterprise product design.",
-    images: ["/images/meta.png"],
   },
   robots: {
     index: true,

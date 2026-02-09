@@ -295,7 +295,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document — they\'re verifying the AI\'s work, not redoing it. Every decision is versioned, giving compliance reviewers a clear audit trail. V2 then took it further: AI-generated tasks now shift routine work directly to borrowers, starting with borrower name and entity corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale — any routine, data-driven task across any loan domain is a candidate for self-service.',
+      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document — users are slowly trusting the system not watching its every move. Every decision is versioned, giving compliance reviewers a clear audit trail. V2 then took it further: AI-generated tasks now shift routine work directly to borrowers, starting with borrower name and entity corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale — any routine, data-driven task across any loan domain is a candidate for self-service.',
     },
   ],
 

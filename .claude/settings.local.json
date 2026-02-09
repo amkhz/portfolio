@@ -4,7 +4,9 @@
       "Bash(npx next build)",
       "Bash(timeout:*)",
       "Bash(curl:*)",
-      "Bash(powershell -Command \"Start-Sleep -Seconds 10; Invoke-WebRequest -Uri ''http://localhost:3099/work/ai-leadership'' -UseBasicParsing | Select-Object -ExpandProperty Content\")"
+      "Bash(powershell -Command \"Start-Sleep -Seconds 10; Invoke-WebRequest -Uri ''http://localhost:3099/work/ai-leadership'' -UseBasicParsing | Select-Object -ExpandProperty Content\")",
+      "Bash(del \"c:\\\\Users\\\\amkhz\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio\\\\src\\\\app\\\\favicon.ico\")",
+      "Bash(npm run build:*)"
     ]
   }
 }
