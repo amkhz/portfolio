@@ -139,7 +139,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The work translated directly into business action: permanent AI tool subscriptions (Magic Patterns, Cursor, Subframe), a repeatable prototyping process now iterating in the team\'s workflow, and a strategic framework that informed product requirements for our two flagship AI products. I became the go-to resource for AI strategy across design, product, and engineering. It\'s a great start, and it\'s constantly evolving as the technology changes. At the pace the technology is moving it\'ll be a chalenge to keep up.',
+      body: 'The work translated directly into business action: permanent AI tool subscriptions (Magic Patterns, Cursor, Subframe), a repeatable prototyping process now iterating in the team\'s workflow, and a strategic framework that informed product requirements for our two flagship AI products. I became the go-to resource for AI strategy across design, product, and engineering. It\'s a great start, and it\'s constantly evolving as the technology changes. At the pace it\'s moving it\'ll be a challenge to keep up.',
     },
   ],
 

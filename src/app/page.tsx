@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Justin Hernandez | Product Designer",
+    title: "Justin Hernandez | Product Design Leader",
     description:
       "Portfolio of Justin Hernandez. Product design leader for complex, human-centered systems. Currently creating with AI.",
     url: "/",
