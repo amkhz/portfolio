@@ -13,7 +13,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-md font-body text-lg text-text-secondary leading-normal">
-          This page drifted into the void. Whatever you were looking for isn&apos;t here — but the rest of the site is.
+          This page drifted into the void. Whatever you were looking for isn&apos;t here, but the rest of the site is.
         </p>
 
         <div className="mt-10">
