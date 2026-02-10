@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/interactive/Button";
@@ -61,8 +61,8 @@ export default function AboutPage() {
                 multiplier, and collaborator. I&apos;ve been designing for
                 digital products since 2010, across healthcare, financial
                 services, e-commerce, non-profit, marketing automation, and
-                human capital management -- mostly enterprise, mostly complex,
-                always interesting.
+                human capital management. Lots of enterprise, tons of complexity,
+                always tons to learn.
               </p>
               <p>
                 Today I lead a small team of designers at Kiavi, a hard money
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 United States. We make complex things efficient and satisfying to
                 use, which is an interesting challenge in an equally challenging
                 industry. My recent focus has been on AI-augmented lending
-                tools -- the kind of products where a bad interaction isn&apos;t
+                tools, the kind of products where a bad interaction isn&apos;t
                 just frustrating, it&apos;s a compliance risk or a delayed
                 closing.
               </p>
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 interface starts thinking for itself. That work shaped the
                 products I designed -- embedding principles like decision
                 versioning, human-in-the-loop review, and auditable AI directly
-                into our product requirements. I love to observe and listen, to
+                into our products. I love to observe and listen, to
                 question and hypothesize, to learn, and to iterate.
               </p>
               <p>
@@ -105,14 +105,14 @@ export default function AboutPage() {
             <p>
               I live in Michigan in a 1950&apos;s ranch house with my wonderful
               wife. We&apos;re both fortunate to work from home, which makes it
-              easier to keep finding new projects to work on together -- right now
+              easier to keep finding new projects to work on together. Right now
               we&apos;re renovating the house and cultivating our back yard into
               a place we can grow food and flowers and watch our animals run
               around. Our rascally dog Carlos and our cats Pistachio and Larry
               complete the picture.
             </p>
             <p>
-              I&apos;m a music and technology obsessive, a living room DJ, a
+              I&apos;m a music and technology nerd, a living room DJ, a
               motorsports enthusiast, a knowledge curator, and a relentlessly
               curious human. I enjoy back country camping, feeling the warmth of
               the sun on the California coast, and searching for music I
@@ -121,8 +121,8 @@ export default function AboutPage() {
           </div>
 
           <p className="mt-8 max-w-[65ch] font-body text-base leading-normal text-text-secondary sm:text-lg">
-            Talk to me about UX, art, music, design, architecture, record
-            collecting, hiking, sustainable living, cooking and dining, all
+            Talk to me about product design, art, music, design, architecture, record
+            collecting, photography, hiking, sustainable living, cooking and dining, all
             things Porsche, video games, cybersecurity, home networking, open
             source intelligence, aerospace -- or even cryptozoology. And probably
             a lot of other stuff too.
