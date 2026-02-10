@@ -26,11 +26,12 @@ export function AboutSnippet() {
             </h2>
 
             <p className="mt-6 max-w-[65ch] font-body text-lg leading-normal text-text-secondary">
-              I design AI-powered tools for lending and financial services,
-              focusing on the intersection of automation and human oversight. My
-              work turns complex operational workflows into transparent,
-              auditable experiences that scale. Currently exploring how design
-              systems and AI-driven development can accelerate product velocity.
+              I&apos;m a product designer, researcher, and force multiplier
+              drawn to hard problems and new territory. For the past 15 years
+              that&apos;s taken me across healthcare, fintech, e-commerce, and
+              enterprise tools. Right now I&apos;m deep in AI, designing
+              products where automation and human judgment have to coexist, and
+              building the systems and knowledge that help teams work this way.
             </p>
 
             <div className="mt-8">

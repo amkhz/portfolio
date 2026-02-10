@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Justin Hernandez — Product Designer";
+export const alt = "Justin Hernandez | Product Designer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -78,7 +78,7 @@ export default function OGImage() {
               lineHeight: 1.4,
             }}
           >
-            Design leader specializing in AI-augmented enterprise products
+            Product design leader for complex, human-centered systems
           </span>
         </div>
 

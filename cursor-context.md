@@ -1,11 +1,22 @@
 # Project Context: Justin Hernandez Portfolio
 
-> **Last updated:** Sunday, February 8, 2026
-> **Current phase:** End of implementation iteration, entering launch-polish iteration
+> **Last updated:** Monday, February 10, 2026
+> **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) pending. Part 3 (next iteration features) planned.
 
 ## Overview
-Personal portfolio for Justin Hernandez (AI-focused product design leader).  
+Personal portfolio for Justin Hernandez (product design leader with deep AI and enterprise experience).  
 This repo is both the portfolio and a proof-of-concept for AI-assisted design-system-to-code workflow.
+
+**Live site:** https://justinh.design/  
+**Repo:** https://github.com/amkhz/portfolio  
+**Design direction:** "Blade Runner meets Finn Juhl" — Danish mid-century warmth + sci-fi atmosphere. Dark mode, warm blacks, dual accent (brass #C8956A + dusty magenta #C278A0), WCAG 2.1 AA compliant throughout.
+
+## Stack
+- **Framework:** Next.js 16.1.6 (App Router) with React 19.2.3
+- **Styling:** Tailwind v4 (inline theme in `globals.css`, sourced from `tokens-ts.ts`)
+- **Language:** TypeScript (strict mode, `@/*` → `./src/*`)
+- **Deployment:** Vercel (production on custom domain)
+- **Build tools:** React Compiler + Turbopack enabled in `next.config.ts`
 
 ## Current Build Status
 - `npm run lint` passes
@@ -20,63 +31,101 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
   - `/work/instant-doc-review`
   - `/work/building-this-portfolio`
 
-## What Is Already Done
-- Core shell and routing
-  - `src/app/layout.tsx`
-  - `src/components/layout/Container.tsx`
-  - `src/components/layout/Header.tsx`
-  - `src/components/layout/Footer.tsx`
-- Main pages complete
-  - Home: `src/app/page.tsx`
-  - Work index: `src/app/work/page.tsx`
-  - Dynamic case study route: `src/app/work/[slug]/page.tsx`
-  - About: `src/app/about/page.tsx`
-  - Resume: `src/app/resume/page.tsx`
-- Content/component system complete
-  - Hero/Project/About: `Hero`, `ProjectCard`, `AboutSnippet`
-  - Case study template + blocks: `CaseStudyPage`, `TextBlock`, `ImageBlock`, `MetricCard`, `MetricGrid`, `ComparisonBlock`, `QuoteBlock`
-  - Interactive/effects: `Button`, `Tag`, `GlowEffect`, `GrainOverlay`, `RevealOnScroll`
-- Data/content organization established
-  - Metadata + token + type layer: `src/lib/tokens-ts.ts`
-  - Case study section content: `src/lib/case-study-content.ts`
-  - Resume markdown model: `src/lib/resume-content.ts`
-- Real case-study images have been added in `public/images/` and referenced in content.
+## Site Architecture
+```
+src/app/
+├── globals.css              # Tailwind v4 theme (token source)
+├── layout.tsx               # Root layout (fonts, Header, Footer, GrainOverlay)
+├── page.tsx                 # Home
+├── not-found.tsx            # Custom 404 (Podkova heading, GlowEffect, Button)
+├── icon.tsx                 # Dynamic favicon (32x32 JH monogram)
+├── apple-icon.tsx           # Apple touch icon (180x180 JH monogram)
+├── opengraph-image.tsx      # OG image (1200x630, brass glow, name + tagline)
+├── twitter-image.tsx        # Twitter card image (1200x630)
+├── robots.ts                # SEO robots
+├── sitemap.ts               # SEO sitemap
+├── about/page.tsx           # About page
+├── resume/page.tsx          # Resume page
+├── work/page.tsx            # Work index
+└── work/[slug]/page.tsx     # Case study detail
+```
 
-## Active In-Progress Files (Current Working Tree)
-- `public/1pageresume.md`
-- `src/lib/tokens-ts.ts`
-- `src/lib/case-study-content.ts`
-- `src/components/content/ImageBlock.tsx`
-- `src/components/content/ProjectCard.tsx`
-- `public/images/*` (new assets)
+## Component Inventory (27 components)
 
-## Remaining Work To Finish This Iteration
-1. Final image/content QA
-   - Validate crop/fit behavior across mobile, tablet, desktop
-   - Validate alt text and caption quality on all case-study images
-2. Accessibility and quality pass after media updates
-   - Re-run Lighthouse + keyboard pass on primary routes
-   - Confirm contrast remains compliant after final image choices
-3. Launch polish
-   - Strengthen metadata (OG/Twitter/canonical) from current basic metadata setup
-   - Verify production domain and deployment readiness
-4. Meta case study completion
-   - `building-this-portfolio` still uses "coming soon" narrative and placeholder-oriented hero path
-   - Decide: complete now or explicitly scope to next iteration
+**Layout (3)**
+- `Container.tsx` — max-width wrapper
+- `Header.tsx` — site nav
+- `Footer.tsx` — site footer (email: justin@justinh.design)
 
-## Planned Next Iteration (Strong Start)
-1. Theme expansion
-   - Add light-mode tokens + header theme toggle + persisted preference
-2. Meta case study expansion
-   - Full narrative of token decisions, AI prompt/output workflow, corrections, and outcomes
-3. Optional model cleanup
-   - Revisit duplication between metadata in `tokens-ts.ts` and sections in `case-study-content.ts`
-4. Workflow/system improvements
-   - Token-to-Figma variable sync path (Token Studio / Variables Visualizer)
-   - Codify repeatable skill-assisted workflow for future portfolio updates
+**Content (15)**
+- `Hero.tsx` — page hero with tagline
+- `ProjectCard.tsx` — work index cards
+- `AboutSnippet.tsx` — home page about teaser
+- `CaseStudyPage.tsx` — case study template
+- `TextBlock.tsx` — rich text section
+- `ImageBlock.tsx` — captioned image section
+- `MetricCard.tsx` — single metric display
+- `MetricGrid.tsx` — metrics row
+- `ComparisonBlock.tsx` — before/after comparison
+- `QuoteBlock.tsx` — pull quote
+- `SectionHeading.tsx` — section header
+- `ResumeHeader.tsx` — resume page header
+- `ResumeSection.tsx` — resume section wrapper
+- `ResumeExperienceItem.tsx` — resume job entry
+- `ResumeSkillGroup.tsx` — resume skills cluster
+
+**Effects (3)**
+- `GlowEffect.tsx` — ambient brass glow
+- `GrainOverlay.tsx` — film grain texture
+- `RevealOnScroll.tsx` — scroll-triggered fade-in
+
+**Interactive (2)**
+- `Button.tsx` — primary/secondary button with href support
+- `Tag.tsx` — label/tag chip
+
+## Data & Content Layer
+- `src/lib/tokens-ts.ts` — design tokens + project metadata
+- `src/lib/case-study-content.ts` — case study section content (CaseStudySection union type: text, image, metrics, comparison, quote)
+- `src/lib/resume-content.ts` — resume data model
+- `src/lib/site-metadata.ts` — helper for resolving site URL across environments (local, Vercel preview, production)
+- `src/lib/utils.ts` — shared utilities
+- `public/1pageresume.md` — downloadable 1-page resume
+- `public/2pageresume.md` — downloadable 2-page resume
+
+## What Has Shipped (Part 1 — Complete)
+- **5 pages live:** Home, About, Resume, Work index, Work detail (3 case studies + meta placeholder)
+- **Custom 404 page** with Podkova heading, warm copy, brass GlowEffect, Button back to home
+- **Dynamic favicon system** — `icon.tsx` (32x32) and `apple-icon.tsx` (180x180), programmatic JH monogram
+- **Dynamic OG/social images** — `opengraph-image.tsx` and `twitter-image.tsx` (1200x630, brass glow)
+- **SEO:** robots.ts, sitemap.ts, per-page metadata with canonical URLs
+- **Content pass:** Em-dash reduction site-wide, case study image captions added, body text tightened
+- **Quick fixes:** Resume Marketo wording corrected, Footer email updated to justin@justinh.design
+- **3 complete case studies:** AI Leadership, Instant SOW, Instant Doc Review
+- **Real case-study images** in `public/images/` (20 assets)
+
+## What's Next
+
+### Part 2 — Meta Case Study (Priority)
+- `building-this-portfolio` entry exists with placeholder content
+- Awaiting Justin's friction log and sprint notes
+- Will follow the same section model as other case studies
+- Structure planned: The Setup → The Build → The Friction → The Results
+
+### Part 3 — Next Iteration Features
+1. **Light/dark theme toggle** — light mode token set, ThemeProvider, ThemeToggle in Header, cookie-persisted preference
+2. **React Bits integration** — micro-interactions, text reveals, page transitions (must respect prefers-reduced-motion)
+3. **Token sync to Figma** — Token Studio / Variable Visualizer as first path, Figma Console MCP as stretch
+4. **Data model cleanup** — consider unifying tokens-ts.ts and case-study-content.ts, or moving to MDX
+5. **Automated design system documentation** — `/system` or `/tokens` page rendering all token values and component variants
+6. **Home server migration** — Docker + Caddy + Cloudflare Tunnel (low priority, Vercel works fine)
 
 ## Non-Negotiables
 - Keep visual direction: warm, atmospheric dark mode (Danish mid-century x sci-fi)
 - Preserve accessibility bar (focus rings, keyboard flow, semantic heading hierarchy, contrast)
 - Keep implementation lean: no UI library sprawl, no unnecessary dependencies
 - Keep token-driven styling and component consistency
+- Use token colors exclusively — no default Tailwind colors, no pure black (#000) or white (#FFF)
+- Didact Gothic only has weight 400 — don't use other weights
+- One h1 per page, h2 → h3 in order, never skip heading levels
+- Run `npm run lint` and `npm run build` before considering any task complete
+- Maintain Justin's voice — professional but personable, never corporate, avoid em-dashes
