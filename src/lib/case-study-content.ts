@@ -66,7 +66,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
   'ai-leadership': [
     {
       type: 'text',
-      body: 'I led the internal push to standardize AI tools across a design and product organization skeptical of generative AI — shaping the process, running the workshops, and defining the strategic framework for how design operates when the interface thinks.',
+      body: 'I led the internal push to standardize AI tools across a design and product organization skeptical of generative AI: shaping the process, running the workshops, and defining the strategic framework for how design operates when the interface thinks.',
     },
     {
       type: 'text',
@@ -76,8 +76,9 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'image',
       src: '/images/diagram.png',
-      alt: 'Diagram showing the dual challenge — tactical tooling gap and strategic design control shift',
-      placeholder: 'Diagram: tactical (tooling gap) on one side, strategic (design control shifting) on the other — showing how both were addressed as one initiative',
+      alt: 'Diagram showing the dual challenge: tactical tooling gap and strategic design control shift',
+      placeholder: 'Diagram: tactical (tooling gap) on one side, strategic (design control shifting) on the other, showing how both were addressed as one initiative',
+      caption: 'Two problems, one initiative: closing the tactical tooling gap while redefining design\'s strategic role in AI-driven products.',
       aspect: '16:9',
     },
     {
@@ -89,14 +90,16 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/process.png',
       alt: 'The 6-step AI prototyping workflow: Define, Scope, Plan, Build, Test, Iterate',
-      placeholder: 'Process diagram: Define -> Scope -> Plan -> Build -> Test -> Iterate — the repeatable AI prototyping workflow taught in workshops',
+      placeholder: 'Process diagram: Define -> Scope -> Plan -> Build -> Test -> Iterate. The repeatable AI prototyping workflow taught in workshops',
+      caption: 'The 6-step workflow taught in every workshop. No coding background required.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/anyone-can-do-it.png',
       alt: 'Workshop title slide: Building with AI Tools — Anyone Can Do It',
-      placeholder: '"Building with AI Tools — Anyone Can Do It" — title slide from the AI workshop training deck',
+      placeholder: '"Building with AI Tools — Anyone Can Do It," title slide from the AI workshop training deck',
+      caption: 'A slide from the workshop series. The goal was to demystify AI tooling for designers and PMs by geting your hands dirty.',
       aspect: '16:9',
     },
     {
@@ -107,20 +110,22 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'image',
       src: '/images/outcomes.png',
-      alt: 'Grid of prototype screenshots built during AI workshops — habit tracker, Pomodoro timer with Kanban',
-      placeholder: 'Composed grid: 2-3 prototype screenshots from workshops — Daily Habit Tracker, Pomodoro Timer with Kanban, internal dashboard',
+      alt: 'Grid of prototype screenshots built during AI workshops: habit tracker, Pomodoro timer with Kanban',
+      placeholder: 'Composed grid: 2-3 prototype screenshots from workshops. Daily Habit Tracker, Pomodoro Timer with Kanban, internal dashboard',
+      caption: 'Protoyping excercises built by workshop attendees in under an hour, from habit trackers to Kanban tools.',
       aspect: '16:9',
     },
     {
       type: 'text',
-      heading: 'Strategic Vision — The Big Flip',
-      body: 'Beyond tooling, I shared a strategic critique of the industry\'s approach to AI product design. The core insight: most enterprise AI products are "draping a modern brain in an 80s UI" — wrapping powerful models in menus and buttons designed for a pre-AI era. This Big Flip is the shift from designers stressing over pixels and components in interfaces to AI-driven interactions where the designer\'s role becomes defining guardrails and contextual patterns, not layouts.\n\nThis framework directly shaped product requirements for our AI lending tools, embedding principles like decision versioning, escape hatches, and transparent confidence scoring.',
+      heading: 'Strategic Vision: The Big Flip',
+      body: 'Beyond tooling, I shared a strategic critique of the industry\'s approach to AI product design. The core insight: most enterprise AI products are "draping a modern brain in an 80s UI," wrapping powerful models in menus and buttons designed for a pre-AI era. This Big Flip is the shift from designers stressing over pixels and components in interfaces to AI-driven interactions where the designer\'s role becomes defining guardrails and contextual patterns, not layouts.\n\nThis framework directly shaped product requirements for our AI lending tools, embedding principles like decision versioning, escape hatches, and transparent confidence scoring.',
     },
     {
       type: 'image',
       src: '/images/big-flip.png',
-      alt: 'The Big Flip diagram — showing the reduction of designer control as AI agency increases',
-      placeholder: 'Conceptual diagram: "The Big Flip" — designer control decreasing as AI agency increases, with the new role being guardrail definition',
+      alt: 'The Big Flip diagram showing the reduction of designer control as AI agency increases',
+      placeholder: 'Conceptual diagram: "The Big Flip." Designer control decreasing as AI agency increases, with the new role being guardrail definition',
+      caption: 'The Big Flip: as AI agency increases, the designer\'s role shifts from pixel-level control to guardrail definition.',
       aspect: '16:9',
     },
     {
@@ -159,7 +164,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
         image: {
           src: '/images/legacy-sow.png',
           alt: '42-field manual SOW entry form',
-          placeholder: 'Legacy SOW form — 42 fields, manual entry, no guidance or intelligence',
+          placeholder: 'Legacy SOW form. 42 fields, manual entry, no guidance or intelligence',
         },
         description: '42-field manual entry form. Borrower fills every field by hand. No guidance, no intelligence.',
       },
@@ -168,28 +173,30 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
         image: {
           src: '/images/tool-box.png',
           alt: 'My SOW Toolbox interface with three AI-assisted paths',
-          placeholder: '"My SOW Toolbox" — three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW',
+          placeholder: '"My SOW Toolbox" with three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW',
         },
-        description: '"My SOW Toolbox" — three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW.',
+        description: '"The SOW Toolbox" with three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW.',
       },
     },
     {
       type: 'text',
-      heading: 'The Solution — Choose Your Path',
-      body: 'Rather than replacing the manual form outright, I designed a "toolbox" approach that gave borrowers three progressively smarter ways to complete their SOW but also worked with their existing ways of working and our established internal processes. Each path feeds into the same underlying data structure, pre-filling fields with AI-extracted data while keeping the borrower in control of the final submission.\n\n**Release 1 — Upload Files:** AI extracts line items from uploaded bids, plans, or spreadsheets (Excel, PDF) and pre-fills the SOW form. The borrower reviews and confirms.\n\n**Release 2 — Describe Your Project:** Borrowers describe their renovation in plain language (typed or dictated). The AI generates a structured SOW from the description, with the borrower validating each section.\n\n**Release 3 — SOW Recycle:** Repeat borrowers (often experienced pros) can select a previous SOW and adapt it for a new property, which is the fastest path for experienced users. While not AI powered, it rounds out the toolbox by giving borrowers a way to quickly reuse their previous work — a key feature for high volume borrowers.',
+      heading: 'The Solution: Choose Your Path',
+      body: 'Rather than replacing the manual form outright, I designed a "toolbox" approach that gave borrowers three progressively smarter ways to complete their SOW but also worked with their existing ways of working and our established internal processes. Each path feeds into the same underlying data structure, pre-filling fields with AI-extracted data while keeping the borrower in control of the final submission.\n\n**Release 1: Upload Files.** AI extracts line items from uploaded bids, plans, or spreadsheets (Excel, PDF) and pre-fills the SOW form. The borrower reviews and confirms.\n\n**Release 2: Describe Your Project.** Borrowers describe their renovation in plain language (typed or dictated). The AI generates a structured SOW from the description, with the borrower validating each section.\n\n**Release 3: SOW Recycle.** Repeat borrowers (often experienced pros) can select a previous SOW and adapt it for a new property, which is the fastest path for experienced users. While not AI powered, it rounds out the toolbox by giving borrowers a way to quickly reuse their previous work, a key feature for high-volume borrowers.',
     },
     {
       type: 'image',
       src: '/images/sow-flow-diagram.png',
       alt: 'Flow diagram showing three SOW paths converging into the same review form',
-      placeholder: 'Flow diagram: three paths (Upload, Describe, Recycle) converging into the same SOW form -> human review -> submission',
+      placeholder: 'Three entry points, one destination. Every path feeds into the same review form so borrowers always have final control',
+      caption: 'Three entry points, one destination. Every path feeds into the same review form so borrowers always have final control.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/feature-flow.png',
       alt: 'Document upload UI showing file selection, extraction progress, and pre-filled results',
-      placeholder: 'UI: document upload experience — file selection -> extraction progress indicator -> pre-filled SOW fields with confidence indicators',
+      placeholder: 'The Upload Files path: borrowers upload bids or plans, AI extracts line items, and the form pre-fills for review',
+      caption: 'The Upload Files path: borrowers upload bids or plans, AI extracts line items, and the form pre-fills for review.',
       aspect: '16:9',
     },
     {
@@ -201,7 +208,8 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/detail-ops.png',
       alt: 'Operations view showing AI-generated flag on submitted SOW',
-      placeholder: 'Ops-side view: SOW submission with "AI-generated" flag visible, feedback mechanism for accuracy reporting',
+      placeholder: 'Every AI-assisted submission is flagged for the SOW team, placed where they do their work.',
+      caption: 'Every AI-assisted submission is flagged for the SOW team, placed where they do their work.',
       aspect: '16:9',
     },
     {
@@ -222,7 +230,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The initial SOW Recycle release for professional borrowers showed strong adoption — 31% of eligible loans used the feature, and the overall condition rate dropped to 45% from a historical average above 50%. The document extraction and natural language paths have completed their staged rollout. The longer-term vision is to surface potential issues during entry so borrowers can self-remediate before submission, using the patterns started in the Instant Review Document Review projects.',
+      body: 'The initial SOW Recycle release for professional borrowers showed strong adoption: 31% of eligible loans used the feature, and the overall condition rate dropped to 45% from a historical average above 50%. The document extraction and natural language paths have completed their staged rollout. The longer-term vision is to surface potential issues during entry so borrowers can self-remediate before submission, using the patterns started in the Instant Review Document Review projects.',
     },
   ],
 
@@ -232,56 +240,61 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
   'instant-doc-review': [
     {
       type: 'text',
-      body: 'I created a net new internal document review experience that shifted a black-box AI system into a transparent, auditable interface where loan analysts can verify, take actions, and ultimately, trust the AI\'s work — with every decision versioned for compliance.',
+      body: 'I created a net new internal document review experience that shifted a black-box AI system into a transparent, auditable interface where loan analysts can verify, take actions, and ultimately, trust the AI\'s work, with every decision versioned for compliance.',
     },
     {
       type: 'text',
       heading: 'The Problem',
-      body: 'The initial AI document review system proof of concept proved the concept worked — AI could extract and validate data from purchase sale agreements (PSAs) and associated documents. But the implementation was quick and scrappy, built into a monolithic codebase with no way for Operations users to see what the AI did, why it flagged something, and, it didn\'t integrate nicely into the system used to inform borrowers of issues. Reviewing a single PSA still took 20 minutes because analysts had to cross-reference the AI\'s output against original documents in separate parts of the system. The MVP was a black box. Analysts either trusted it blindly or viewed it as a hassle. Neither outcome was acceptable for regulated financial operations.',
+      body: 'The initial AI document review system proof of concept proved the concept worked: AI could extract and validate data from purchase sale agreements (PSAs) and associated documents. But the implementation was quick and scrappy, built into a monolithic codebase with no way for Operations users to see what the AI did, why it flagged something, and, it didn\'t integrate nicely into the system used to inform borrowers of issues. Reviewing a single PSA still took 20 minutes because analysts had to cross-reference the AI\'s output against original documents in separate parts of the system. The MVP was a black box. Analysts either trusted it blindly or viewed it as a hassle. Neither outcome was acceptable for regulated financial operations.',
     },
     {
       type: 'image',
       src: '/images/before-flow.png',
       alt: 'Diagram showing the fragmented before-state workflow for document review',
-      placeholder: 'Before-state flow: analyst jumping between AI output -> separate document viewer -> conditions system -> manual cross-referencing. Pain points annotated.',
+      placeholder: 'Before-state flow: analyst jumping between AI output -> separate document viewer -> feedback system -> manual cross-referencing. Pain points annotated.',
+      caption: 'The before state: analysts bouncing between AI output, a separate document viewer, and the feedback system to review a single PSA.',
       aspect: '16:9',
     },
     {
       type: 'text',
-      heading: 'The Solution — Property Admin Page',
-      body: 'I designed the initial version of the Property Admin Page as a single source of truth for AI-assisted document review. The core principle: move incrementally from rigid automation to intelligent augmentation. The analyst\'s expertise is the product — the AI just does the grunt work of extraction so they can focus on judgment calls.\n\n**V1 shipped three critical capabilities:**\n\n**Extracted data view** — all AI-extracted fields visible in a familiar structured layout, like our current system, so the analyst can scan without hunting.\n\n**Inline document viewer** — the original document loads side-by-side with the extracted data. No tab-switching, no context loss. The analyst can verify any field against the source in one glance.\n\n**Escape hatch with audit trail** — if the AI got it wrong or the analyst needs to revert to the manual process, they can — but they must provide a justification note. This creates accountability without blocking the workflow and refines our prompts.',
+      heading: 'The Solution: Property Admin Page',
+      body: 'I designed the initial version of the Property Admin Page as a single source of truth for AI-assisted document review. The core principle: move incrementally from rigid automation to intelligent augmentation. The analyst\'s expertise is the product. The AI just does the grunt work of extraction so they can focus on judgment calls.\n\n**V1 shipped three critical capabilities:**\n\n**Extracted data view:** all AI-extracted fields visible in a familiar structured layout, like our current system, so the analyst can scan without hunting.\n\n**Inline document viewer:** the original document loads side-by-side with the extracted data. No tab-switching, no context loss. The analyst can verify any field against the source in one glance.\n\n**Escape hatch with audit trail:** if the AI got it wrong or the analyst needs to revert to the manual process, they can, but they must provide a justification note. This creates accountability without blocking the workflow and refines our prompts.',
     },
     {
       type: 'image',
       src: '/images/admin-page-tasks.png',
       alt: 'IDR Admin Page showing extracted data, document viewer, and conditions panel',
-      placeholder: 'Property Admin Page — three-panel layout: extracted data fields (left), inline document viewer (right), consolidated conditions summary (below)',
+      placeholder: 'Magic Patterns prototype of the Property Admin Page: rules, source documents and data, and targerted tasking in one view. No more tab-switching',
+      caption: 'Magic Patterns prototype of the Property Admin Page: rules, source documents and data, and targerted tasking in one view. No more tab-switching.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/detail-mvp-work.png',
       alt: 'Close-up of inline document viewer with highlighted field comparison',
-      placeholder: 'Detail: inline document viewer with a data field highlighted, showing analyst comparing extracted value to source document',
+      placeholder: 'Detail: Prototype example of bridging the gap between the new system and the legacy feedback system.',
+      caption: 'Prototype example of bridging the gap between the new system and the legacy feedback system.',
       aspect: '4:3',
     },
     {
       type: 'text',
-      heading: 'V2 — Borrower Self-Service',
-      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks, starting with borrower name and entity corrections, and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThese are the first task types, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, within risk limits, and document-driven is a candidate for borrower self-service. and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is a complete hub — a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, project data, valuation data, etc. — each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
+      heading: 'V2: Borrower Self-Service',
+      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks, starting with borrower name and entity corrections, and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThese are the first task types, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, within risk limits, and document-driven is a candidate for borrower self-service, and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is a complete hub: a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, project data, valuation data, etc. Each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
     },
     {
       type: 'image',
       src: '/images/borrower-flow.png',
-      alt: 'Borrower self-service task flow — AI generates task, borrower uploads corrected document, AI confirms',
-      placeholder: 'UI flow: AI generates task -> borrower receives notification -> uploads corrected document -> AI reviews -> confirms or requests again',
+      alt: 'Borrower self-service task flow: AI generates task, borrower uploads corrected document, AI confirms',
+      placeholder: 'V2 self-service loop: AI generates a task, the borrower acts on it, and AI confirms the fix. No analyst needed. Magic Patterns made iterations easy',
+      caption: 'V2 self-service loop: AI generates a task, the borrower acts on it, and AI confirms the fix. No analyst needed. Magic Patterns made iterations easy.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/future-vision.png',
       alt: 'Instant Review Hub concept showing multiple document domains in unified view',
-      placeholder: 'Future vision: Instant Review Hub — multiple domains (Property, Member/Entities, Title, Appraisal) feeding into one review interface with per-source escape hatches',
+      placeholder: 'The longer-term vision: one review pattern applied across every document domain in the loan lifecycle.',
+      caption: 'The longer-term vision: one review pattern applied across every document domain in the loan lifecycle.',
       aspect: '16:9',
     },
     {
@@ -305,7 +318,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
   'building-this-portfolio': [
     {
       type: 'text',
-      body: 'This portfolio is itself a case study in AI-augmented design and development. I designed a token system, built a component library, wrote the content, and shipped to production in a 48-hour sprint — documenting every AI interaction along the way.',
+      body: 'This portfolio is itself a case study in AI-augmented design and development. I designed a token system, built a component library, wrote the content, and shipped to production in a 48-hour sprint, documenting every AI interaction along the way.',
     },
     {
       type: 'text',

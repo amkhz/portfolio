@@ -22,7 +22,7 @@ export function Hero() {
         {/* Subtitle — Didact Gothic, comfortable reading */}
         <p className="mt-6 max-w-[56ch] font-body text-lg leading-normal text-text-secondary">
           Design leader specializing in AI-augmented enterprise products
-          — where complex workflows meet human judgment.
+          , where complex workflows meet human judgment.
         </p>
 
         {/* CTA — brass primary button */}

@@ -124,7 +124,7 @@ export default function AboutPage() {
             Talk to me about product design, art, music, design, architecture, record
             collecting, photography, hiking, sustainable living, cooking and dining, all
             things Porsche, video games, cybersecurity, home networking, open
-            source intelligence, aerospace -- or even cryptozoology. And probably
+            source intelligence, aerospace, or even cryptozoology. And probably
             a lot of other stuff too.
           </p>
         </Container>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <strong className="font-bold text-accent-primary">
                   Automation should augment judgment, not replace it.
                 </strong>{" "}
-                The best AI tools make experts faster. The worst ones make
+                The best AI tools make us work smarter, not harder. The worst ones make
                 everyone equally mediocre.
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
                   Accessibility isn&apos;t a feature.
                 </strong>{" "}
                 It&apos;s the baseline. Every token, component, and interaction
-                in my work meets WCAG 2.1 AA -- not because it&apos;s required,
+                in my work meets WCAG 2.1 AA. Not because it&apos;s required,
                 but because design that excludes people isn&apos;t design.
               </p>
             </div>
