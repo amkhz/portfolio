@@ -9,14 +9,14 @@ import { caseStudies } from "@/lib/tokens-ts";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Portfolio of Justin Hernandez featuring AI strategy, enterprise UX, and design systems case studies.",
+    "Portfolio of Justin Hernandez. Product design leader for complex, human-centered systems. Currently creating with AI.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Justin Hernandez | Product Designer",
     description:
-      "Portfolio of Justin Hernandez featuring AI strategy, enterprise UX, and design systems case studies.",
+      "Portfolio of Justin Hernandez. Product design leader for complex, human-centered systems. Currently creating with AI.",
     url: "/",
   },
   twitter: {

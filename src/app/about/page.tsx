@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/interactive/Button";
@@ -6,14 +6,14 @@ import { Button } from "@/components/interactive/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Lead product designer specializing in AI-powered enterprise product design, design leadership, and human-centered automation.",
+    "Product design leader specializing in complex, human-centered systems. Currently focused on AI.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About | Justin Hernandez",
     description:
-      "Lead product designer specializing in AI-powered enterprise product design, design leadership, and human-centered automation.",
+      "Product design leader specializing in complex, human-centered systems. Currently focused on AI.",
     url: "/about",
     images: ["/images/about.jpeg"],
   },
@@ -33,7 +33,7 @@ export default function AboutPage() {
             About
           </span>
           <h1 className="mt-4 max-w-[20ch] font-display text-3xl leading-tight tracking-tight text-text-primary sm:text-4xl">
-            Designing for the moment machines start making decisions
+            Drawn to complexity. Designing for people.
           </h1>
         </Container>
       </section>
