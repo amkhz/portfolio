@@ -58,8 +58,8 @@ Directed user experience for US healthcare, global consumer brands, and financia
 
 Helped craft the experience for marketing automation software while contributing to UX team growth during period of rapid company expansion.
 
-- Led design and research initiatives for Marketo Projects, a workflow management tool for marketing teams
-- Contributed to design system evolution and product strategy during critical growth phase
+- Led design and research initiatives for the Marketo marketing calendar
+- Contributed to product evolution and product strategy during critical growth phase
 - Collaborated with product management and engineering to ship features for enterprise B2B customers
 
 ### User Experience Architect | Ogilvy & Mather (Chicago, IL)
@@ -97,8 +97,6 @@ Product Design, User Research, Design Strategy, Service Design, Design Systems, 
 **AI & Automation**  
 GenAI Product Design, Prompt Engineering, AI-Powered Automation, Intelligent Document Processing, Predictive Personalization, AI Tool Integration
 
-**Tools & Technologies**  
-Figma, Sketch, Adobe Creative Suite, Webflow, Prototyping Tools, Design System Management, Service-Oriented Architecture (SOA) Understanding
 
 **Leadership & Collaboration**  
 Team Management, Mentorship, Cross-Functional Leadership, Strategic Partnership, Stakeholder Communication, Agile Methodologies

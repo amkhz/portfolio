@@ -37,7 +37,7 @@ Directed UX for healthcare, consumer brands, and financial services accounts. Es
 ### Senior UX Designer | Marketo (San Mateo, CA)
 **December 2013 – September 2015**
 
-Led design for Marketo Projects workflow management tool. Contributed to design system evolution during rapid company growth phase.
+Led design for the Marketo Marketing Calendar. Contributed product evolution during rapid company growth phase.
 
 ### Earlier Experience
 
