@@ -26,7 +26,7 @@ export function Footer() {
               About Justin
             </Link>
             <a
-              href="mailto:hello@justinhernandez.design"
+              href="mailto:justin@justinh.design"
               className="inline-flex min-h-[44px] items-center font-heading text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             >
               Email Justin
