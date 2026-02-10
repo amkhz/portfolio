@@ -71,7 +71,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'The Dual Challenge',
-      body: 'The company faced two problems at once. Tactically, leadership recognized the potential of AI for internal efficiency, but there was no standardized process for using generative AI to prototype and ship faster. Strategically, there was no shared understanding of how design\'s role changes when AI drives the interaction, not the user.\n\nI framed this as one initiative: adoption requires both hands-on enablement and alignment on principles like trust, transparency, and human oversight.',
+      body: 'The company faced two problems at once. Tactically, leadership recognized the potential of AI for internal efficiency, but there was no standardized process for using generative AI to prototype and ship faster without compromising quality or creating more design debt. Strategically, there was no shared understanding of how design\'s role changes when AI drives the interaction, not the user.\n\nI framed this as one initiative: adoption requires both hands-on enablement and alignment on principles like trust, transparency, and human oversight.',
     },
     {
       type: 'image',
@@ -102,7 +102,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'Demonstrating Output',
-      body: 'The workshops produced tangible prototypes — not theory decks. Designers built working apps (habit trackers, Kanban tools, internal dashboards) using Gemini and Subframe, proving that AI-assisted prototyping could compress weeks of concept work into hours. This directly contributed to a later winning AI Hackathon project using Replit.',
+      body: 'The workshops produced tangible prototypes, it wasn\'t just me talking at people for an hour. Attendees built working apps (habit trackers, Kanban tools, snake games) using Gemini and Subframe, proving that AI-assisted prototyping could compress weeks of concept work into hours. This directly contributed to a later winning AI Hackathon project using Replit.',
     },
     {
       type: 'image',
@@ -114,7 +114,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'Strategic Vision — The Big Flip',
-      body: 'Beyond tooling, I shared a strategic critique of the industry\'s approach to AI product design. The core insight: most enterprise AI products are "draping a modern brain in an 80s UI" — wrapping powerful models in menus and buttons designed for a pre-AI era. This Big Flip is the shift from designer-controlled interfaces to AI-driven interactions where the designer\'s role becomes defining guardrails, not layouts.\n\nThis framework directly shaped product requirements for our AI lending tools, embedding principles like decision versioning, escape hatches, and transparent confidence scoring.',
+      body: 'Beyond tooling, I shared a strategic critique of the industry\'s approach to AI product design. The core insight: most enterprise AI products are "draping a modern brain in an 80s UI" — wrapping powerful models in menus and buttons designed for a pre-AI era. This Big Flip is the shift from designers stressing over pixels and components in interfaces to AI-driven interactions where the designer\'s role becomes defining guardrails and contextual patterns, not layouts.\n\nThis framework directly shaped product requirements for our AI lending tools, embedding principles like decision versioning, escape hatches, and transparent confidence scoring.',
     },
     {
       type: 'image',
@@ -134,7 +134,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The work translated directly into business action: permanent AI tool subscriptions, a repeatable prototyping process now iterating in the team\'s workflow, and a strategic framework that informed product requirements for our two flagship AI products. I became the go-to resource for AI strategy across design, product, and engineering.',
+      body: 'The work translated directly into business action: permanent AI tool subscriptions (Magic Patterns, Cursor, Subframe), a repeatable prototyping process now iterating in the team\'s workflow, and a strategic framework that informed product requirements for our two flagship AI products. I became the go-to resource for AI strategy across design, product, and engineering. It\'s a great start, and it\'s constantly evolving as the technology changes. At the pace the technology is moving it\'ll be a chalenge to keep up.',
     },
   ],
 
@@ -176,7 +176,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'The Solution — Choose Your Path',
-      body: 'Rather than replacing the manual form outright, I designed a "toolbox" approach that gave borrowers three progressively smarter ways to complete their SOW but also worked with their existing ways of working. Each path feeds into the same underlying data structure, pre-filling fields with AI-extracted data while keeping the borrower in control of the final submission.\n\n**Release 1 — Upload Files:** AI extracts line items from uploaded bids, plans, or spreadsheets (Excel, PDF) and pre-fills the SOW form. The borrower reviews and confirms.\n\n**Release 2 — Describe Your Project:** Borrowers describe their renovation in plain language (typed or dictated). The AI generates a structured SOW from the description, with the borrower validating each section.\n\n**Release 3 — SOW Recycle:** Repeat borrowers (often experienced pros) can select a previous SOW and adapt it for a new property — the fastest path for experienced users. While not AI powered, it rounds out the toolbox by giving borrowers a way to quickly reuse their previous work — a key feature for high volume borrowers.',
+      body: 'Rather than replacing the manual form outright, I designed a "toolbox" approach that gave borrowers three progressively smarter ways to complete their SOW but also worked with their existing ways of working and our established internal processes. Each path feeds into the same underlying data structure, pre-filling fields with AI-extracted data while keeping the borrower in control of the final submission.\n\n**Release 1 — Upload Files:** AI extracts line items from uploaded bids, plans, or spreadsheets (Excel, PDF) and pre-fills the SOW form. The borrower reviews and confirms.\n\n**Release 2 — Describe Your Project:** Borrowers describe their renovation in plain language (typed or dictated). The AI generates a structured SOW from the description, with the borrower validating each section.\n\n**Release 3 — SOW Recycle:** Repeat borrowers (often experienced pros) can select a previous SOW and adapt it for a new property, which is the fastest path for experienced users. While not AI powered, it rounds out the toolbox by giving borrowers a way to quickly reuse their previous work — a key feature for high volume borrowers.',
     },
     {
       type: 'image',
@@ -195,7 +195,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'Human Oversight Built In',
-      body: 'Every AI-generated SOW is flagged in the operations system so the internal team knows it was machine-assisted. For our incremental rollout, I worked with our assisted data science team to design a feedback loop between the feasibility team and the AI pipeline; if extraction accuracy drops, the team can flag patterns and adjust the rollout. The validation criteria was explicit: AI-extracted data must be no worse than manually entered data, and condition rates must not increase.',
+      body: 'Every AI-generated SOW is flagged in the operations system so the internal team knows it was machine-assisted. For our incremental rollout, I worked with our assisted data science team to design a feedback loop between the feasibility team and the AI pipeline; if extraction accuracy drops, the team can flag patterns and adjust the rollout. The validation criteria was explicit: AI-extracted data must be no worse than manually entered data, and condition rates must not increase. This is only v1, and as we refine this pattern we will unlock more features. ',
     },
     {
       type: 'image',
@@ -232,12 +232,12 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
   'instant-doc-review': [
     {
       type: 'text',
-      body: 'I redesigned the internal document review experience from a black-box AI system into a transparent, auditable interface where loan analysts can verify, override, and trust the AI\'s work — with every decision versioned for compliance.',
+      body: 'I created a net new internal document review experience that shifted a black-box AI system into a transparent, auditable interface where loan analysts can verify, take actions, and ultimately, trust the AI\'s work — with every decision versioned for compliance.',
     },
     {
       type: 'text',
       heading: 'The Problem',
-      body: 'The initial AI document review system (IDR MVP) proved the concept worked — AI could extract and validate data from purchase sale agreements (PSAs) and other loan documents. But the implementation was "quick and scrappy," built into a monolithic codebase with no way for ops users to see what the AI did, why it flagged something, or how to correct it. Reviewing a single PSA still took 20 minutes because analysts had to cross-reference the AI\'s output against original documents in separate systems.\n\nThe MVP was a black box. Analysts either trusted it blindly or ignored it entirely — neither outcome was acceptable for regulated financial operations.',
+      body: 'The initial AI document review system proof of concept proved the concept worked — AI could extract and validate data from purchase sale agreements (PSAs) and associated documents. But the implementation was quick and scrappy, built into a monolithic codebase with no way for Operations users to see what the AI did, why it flagged something, and, it didn\'t integrate nicely into the system used to inform borrowers of issues. Reviewing a single PSA still took 20 minutes because analysts had to cross-reference the AI\'s output against original documents in separate parts of the system. The MVP was a black box. Analysts either trusted it blindly or viewed it as a hassle. Neither outcome was acceptable for regulated financial operations.',
     },
     {
       type: 'image',
@@ -249,7 +249,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'The Solution — Property Admin Page',
-      body: 'I designed the Property Admin Page as a single source of truth for AI-assisted document review. The core principle: move from rigid automation to intelligent augmentation. The analyst\'s expertise is the product — the AI just does the grunt work of extraction so they can focus on judgment calls.\n\n**V1 shipped three critical capabilities:**\n\n**Extracted data view** — all AI-extracted fields visible in a structured layout, organized by document section, so the analyst can scan without hunting.\n\n**Inline document viewer** — the original document loads side-by-side with the extracted data. No tab-switching, no context loss. The analyst can verify any field against the source in one glance.\n\n**Escape hatch with audit trail** — if the AI got it wrong or the analyst needs to revert to the manual process, they can — but they must provide a justification note. This creates accountability without blocking the workflow.',
+      body: 'I designed the initial version of the Property Admin Page as a single source of truth for AI-assisted document review. The core principle: move incrementally from rigid automation to intelligent augmentation. The analyst\'s expertise is the product — the AI just does the grunt work of extraction so they can focus on judgment calls.\n\n**V1 shipped three critical capabilities:**\n\n**Extracted data view** — all AI-extracted fields visible in a familiar structured layout, like our current system, so the analyst can scan without hunting.\n\n**Inline document viewer** — the original document loads side-by-side with the extracted data. No tab-switching, no context loss. The analyst can verify any field against the source in one glance.\n\n**Escape hatch with audit trail** — if the AI got it wrong or the analyst needs to revert to the manual process, they can — but they must provide a justification note. This creates accountability without blocking the workflow and refines our prompts.',
     },
     {
       type: 'image',
@@ -268,7 +268,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     {
       type: 'text',
       heading: 'V2 — Borrower Self-Service',
-      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks — starting with borrower name and entity corrections — and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThis is the first task type, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, and document-driven is a candidate for borrower self-service — and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is an Instant Review Hub — a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, title, appraisal — each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
+      body: 'V2 shifted work that once belonged to loan analysts directly to borrowers. AI now generates actionable tasks, starting with borrower name and entity corrections, and delivers them to the borrower automatically. The borrower uploads a corrected document, gets immediate feedback, resubmits if needed, and moves forward without waiting for an analyst to intervene. It\'s a loop: AI reviews, borrower acts, AI confirms. Loans close faster, analysts focus on higher-value exceptions, and borrowers get the agency and control they\'ve been missing.\n\nThese are the first task types, but the pattern is designed to expand. Anything an analyst currently does that\'s routine, repeatable, within risk limits, and document-driven is a candidate for borrower self-service. and each new task type compounds the efficiency gains on both sides.\n\nThe longer-term vision is a complete hub — a unified interface that extends this AI-driven review and task generation pattern beyond property documents to any domain in the loan lifecycle. Member entities, borrower information, property data, project data, valuation data, etc. — each domain gets the same treatment: AI extracts and validates, analysts audit in a single view with granular escape hatches per data source, and borrowers receive self-service tasks to resolve issues on their own. One pattern, applied everywhere.',
     },
     {
       type: 'image',
@@ -295,7 +295,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
     },
     {
       type: 'text',
-      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document — users are slowly trusting the system not watching its every move. Every decision is versioned, giving compliance reviewers a clear audit trail. V2 then took it further: AI-generated tasks now shift routine work directly to borrowers, starting with borrower name and entity corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale — any routine, data-driven task across any loan domain is a candidate for self-service.',
+      body: 'The redesigned review process cut analyst time from 20 minutes to 5-7 minutes per document: users are slowly trusting the system not watching its every move. Every decision is versioned, giving compliance a clear audit trail. V2 then takes it further: AI-generated tasks now shift routine work directly to borrowers, starting with borrower name and entity corrections. Borrowers get agency, analysts get their time back, and loans close faster. The pattern is built to scale: any routine, data-driven task across any loan domain is a candidate for self-service.',
     },
   ],
 
