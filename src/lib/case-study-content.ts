@@ -78,6 +78,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       src: '/images/diagram.png',
       alt: 'Diagram showing the dual challenge: tactical tooling gap and strategic design control shift',
       placeholder: 'Diagram: tactical (tooling gap) on one side, strategic (design control shifting) on the other, showing how both were addressed as one initiative',
+      caption: 'Two problems, one initiative: closing the tactical tooling gap while redefining design\'s strategic role in AI-driven products.',
       aspect: '16:9',
     },
     {
@@ -90,6 +91,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       src: '/images/process.png',
       alt: 'The 6-step AI prototyping workflow: Define, Scope, Plan, Build, Test, Iterate',
       placeholder: 'Process diagram: Define -> Scope -> Plan -> Build -> Test -> Iterate. The repeatable AI prototyping workflow taught in workshops',
+      caption: 'The 6-step workflow taught in every workshop. No coding background required.',
       aspect: '16:9',
     },
     {
@@ -97,6 +99,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       src: '/images/anyone-can-do-it.png',
       alt: 'Workshop title slide: Building with AI Tools — Anyone Can Do It',
       placeholder: '"Building with AI Tools — Anyone Can Do It," title slide from the AI workshop training deck',
+      caption: 'A slide from the workshop series. The goal was to demystify AI tooling for designers and PMs by geting your hands dirty.',
       aspect: '16:9',
     },
     {
@@ -109,6 +112,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       src: '/images/outcomes.png',
       alt: 'Grid of prototype screenshots built during AI workshops: habit tracker, Pomodoro timer with Kanban',
       placeholder: 'Composed grid: 2-3 prototype screenshots from workshops. Daily Habit Tracker, Pomodoro Timer with Kanban, internal dashboard',
+      caption: 'Protoyping excercises built by workshop attendees in under an hour, from habit trackers to Kanban tools.',
       aspect: '16:9',
     },
     {
@@ -121,6 +125,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       src: '/images/big-flip.png',
       alt: 'The Big Flip diagram showing the reduction of designer control as AI agency increases',
       placeholder: 'Conceptual diagram: "The Big Flip." Designer control decreasing as AI agency increases, with the new role being guardrail definition',
+      caption: 'The Big Flip: as AI agency increases, the designer\'s role shifts from pixel-level control to guardrail definition.',
       aspect: '16:9',
     },
     {
@@ -170,7 +175,7 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
           alt: 'My SOW Toolbox interface with three AI-assisted paths',
           placeholder: '"My SOW Toolbox" with three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW',
         },
-        description: '"My SOW Toolbox" with three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW.',
+        description: '"The SOW Toolbox" with three AI-assisted paths: Upload Files, Describe Your Project, Select Previous SOW.',
       },
     },
     {
@@ -182,14 +187,16 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/sow-flow-diagram.png',
       alt: 'Flow diagram showing three SOW paths converging into the same review form',
-      placeholder: 'Flow diagram: three paths (Upload, Describe, Recycle) converging into the same SOW form -> human review -> submission',
+      placeholder: 'Three entry points, one destination. Every path feeds into the same review form so borrowers always have final control',
+      caption: 'Three entry points, one destination. Every path feeds into the same review form so borrowers always have final control.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/feature-flow.png',
       alt: 'Document upload UI showing file selection, extraction progress, and pre-filled results',
-      placeholder: 'UI: document upload experience. File selection -> extraction progress indicator -> pre-filled SOW fields with confidence indicators',
+      placeholder: 'The Upload Files path: borrowers upload bids or plans, AI extracts line items, and the form pre-fills for review',
+      caption: 'The Upload Files path: borrowers upload bids or plans, AI extracts line items, and the form pre-fills for review.',
       aspect: '16:9',
     },
     {
@@ -201,7 +208,8 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/detail-ops.png',
       alt: 'Operations view showing AI-generated flag on submitted SOW',
-      placeholder: 'Ops-side view: SOW submission with "AI-generated" flag visible, feedback mechanism for accuracy reporting',
+      placeholder: 'Every AI-assisted submission is flagged for the SOW team, placed where they do their work.',
+      caption: 'Every AI-assisted submission is flagged for the SOW team, placed where they do their work.',
       aspect: '16:9',
     },
     {
@@ -243,7 +251,8 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/before-flow.png',
       alt: 'Diagram showing the fragmented before-state workflow for document review',
-      placeholder: 'Before-state flow: analyst jumping between AI output -> separate document viewer -> conditions system -> manual cross-referencing. Pain points annotated.',
+      placeholder: 'Before-state flow: analyst jumping between AI output -> separate document viewer -> feedback system -> manual cross-referencing. Pain points annotated.',
+      caption: 'The before state: analysts bouncing between AI output, a separate document viewer, and the feedback system to review a single PSA.',
       aspect: '16:9',
     },
     {
@@ -255,14 +264,16 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/admin-page-tasks.png',
       alt: 'IDR Admin Page showing extracted data, document viewer, and conditions panel',
-      placeholder: 'Property Admin Page. Three-panel layout: extracted data fields (left), inline document viewer (right), consolidated conditions summary (below)',
+      placeholder: 'Magic Patterns prototype of the Property Admin Page: rules, source documents and data, and targerted tasking in one view. No more tab-switching',
+      caption: 'Magic Patterns prototype of the Property Admin Page: rules, source documents and data, and targerted tasking in one view. No more tab-switching.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/detail-mvp-work.png',
       alt: 'Close-up of inline document viewer with highlighted field comparison',
-      placeholder: 'Detail: inline document viewer with a data field highlighted, showing analyst comparing extracted value to source document',
+      placeholder: 'Detail: Prototype example of bridging the gap between the new system and the legacy feedback system.',
+      caption: 'Prototype example of bridging the gap between the new system and the legacy feedback system.',
       aspect: '4:3',
     },
     {
@@ -274,14 +285,16 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
       type: 'image',
       src: '/images/borrower-flow.png',
       alt: 'Borrower self-service task flow: AI generates task, borrower uploads corrected document, AI confirms',
-      placeholder: 'UI flow: AI generates task -> borrower receives notification -> uploads corrected document -> AI reviews -> confirms or requests again',
+      placeholder: 'V2 self-service loop: AI generates a task, the borrower acts on it, and AI confirms the fix. No analyst needed. Magic Patterns made iterations easy',
+      caption: 'V2 self-service loop: AI generates a task, the borrower acts on it, and AI confirms the fix. No analyst needed. Magic Patterns made iterations easy.',
       aspect: '16:9',
     },
     {
       type: 'image',
       src: '/images/future-vision.png',
       alt: 'Instant Review Hub concept showing multiple document domains in unified view',
-      placeholder: 'Future vision: Instant Review Hub. Multiple domains (Property, Member/Entities, Title, Appraisal) feeding into one review interface with per-source escape hatches',
+      placeholder: 'The longer-term vision: one review pattern applied across every document domain in the loan lifecycle.',
+      caption: 'The longer-term vision: one review pattern applied across every document domain in the loan lifecycle.',
       aspect: '16:9',
     },
     {
