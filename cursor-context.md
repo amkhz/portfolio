@@ -1,6 +1,6 @@
 # Project Context: Justin Hernandez Portfolio
 
-> **Last updated:** Tuesday, February 10, 2026
+> **Last updated:** Saturday, February 22, 2026
 > **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) pending. Part 3 (next iteration features) planned.
 
 ## Overview
@@ -9,7 +9,7 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 
 **Live site:** https://justinh.design/  
 **Repo:** https://github.com/amkhz/portfolio  
-**Design direction:** "Blade Runner meets Finn Juhl" — Danish mid-century warmth + sci-fi atmosphere. Dark mode, warm blacks, dual accent (brass #C8956A + dusty magenta #C278A0), WCAG 2.1 AA compliant throughout.
+**Design direction:** "Blade Runner + William Gibson meets Finn Juhl" — Danish mid-century warmth + sci-fi atmosphere. Dark mode, warm blacks, dual accent (brass #C8956A + dusty magenta #C278A0), WCAG 2.2 AA compliant throughout.
 
 ## Stack
 - **Framework:** Next.js 16.1.6 (App Router) with React 19.2.3
@@ -17,6 +17,7 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 - **Language:** TypeScript (strict mode, `@/*` → `./src/*`)
 - **Deployment:** Vercel (production on custom domain)
 - **Build tools:** React Compiler + Turbopack enabled in `next.config.ts`
+- **AI skills:** Custom project skills in `.claude/skills/` + globally installed skills (see Skills section below)
 
 ## Current Build Status
 - `npm run lint` passes
@@ -50,7 +51,7 @@ src/app/
 └── work/[slug]/page.tsx     # Case study detail
 ```
 
-## Component Inventory (27 components)
+## Component Inventory (23 components)
 
 **Layout (3)**
 - `Container.tsx` — max-width wrapper
@@ -118,6 +119,28 @@ src/app/
 4. **Data model cleanup** — consider unifying tokens-ts.ts and case-study-content.ts, or moving to MDX
 5. **Automated design system documentation** — `/system` or `/tokens` page rendering all token values and component variants
 6. **Home server migration** — Docker + Caddy + Cloudflare Tunnel (low priority, Vercel works fine)
+
+## Skills & Agent Workflow
+
+Four custom project skills live in `.claude/skills/` and coordinate work across the portfolio:
+
+- **Writer** (`.claude/skills/writer/`) — Creates and refines case study content. Directly edits `case-study-content.ts` and `tokens-ts.ts` metadata. Maintains Justin's voice. Has references for section types and the meta case study brief.
+- **Director** (`.claude/skills/director/`) — Maintains project direction and status. Evolves `plans/post-launch-plan.md` as the living status doc. Tracks pitch-worthy items for the team presentation. Coordinates work across the other skills.
+- **Dreamer** (`.claude/skills/dreamer/`) — Refines ideas into actionable plans. Does lightweight-to-deep research depending on scope. Produces plan files in `plans/` for the Builder to execute.
+- **Builder** (`.claude/skills/builder/`) — Implements features, fixes bugs, writes code. Executes Dreamer plans. Enforces quality gates (lint, build, a11y, token compliance). Has an architecture reference.
+
+**Skill coordination flow:** Idea → Dreamer (refine + plan) → Builder (implement) or Writer (content) → Director (track, prioritize, flag pitch items)
+
+Three globally installed skills provide supplementary domain knowledge:
+- **nextjs-app-router-patterns** — Next.js 14+ App Router architecture patterns
+- **accessibility** — WCAG compliance, automated testing (Lighthouse, axe-core), manual checklists
+- **tailwind-design-system** — Tailwind v4 `@theme` blocks, dark mode with CSS variables, CVA patterns
+
+Utility skills: `find-skills` (discover/install from skills.sh), `skill-creator` (create new skills).
+
+**Bookmarked for future install** (Figma sync work, Part 3.3):
+- `figma/mcp-server-guide@create-design-system-rules`
+- `figma/mcp-server-guide@implement-design`
 
 ## Non-Negotiables
 - Keep visual direction: warm, atmospheric dark mode (Danish mid-century x sci-fi)
