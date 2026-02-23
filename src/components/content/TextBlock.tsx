@@ -9,7 +9,7 @@ interface TextBlockProps {
  * - **bold text** → <strong> in text-primary font-semibold
  * - [link text](url) → <a> in accent color with hover underline
  */
-function parseInline(text: string): React.ReactNode[] {
+export function parseInline(text: string): React.ReactNode[] {
   // Pattern matches **bold**, [link](url), or plain text segments
   const tokenPattern = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
   const parts = text.split(tokenPattern);

@@ -49,12 +49,19 @@ type QuoteSection = {
   role?: string;
 };
 
+type CalloutSection = {
+  type: 'callout';
+  label?: string;
+  body: string;
+};
+
 export type CaseStudySection =
   | TextSection
   | ImageSection
   | MetricsSection
   | ComparisonSection
-  | QuoteSection;
+  | QuoteSection
+  | CalloutSection;
 
 // --- Content by slug ---
 
@@ -316,14 +323,116 @@ export const caseStudyContent: Record<string, CaseStudySection[]> = {
   // 4. META — BUILDING THIS PORTFOLIO
   // =============================================
   'building-this-portfolio': [
+    // --- Opening ---
     {
       type: 'text',
-      body: 'This portfolio is itself a case study in AI-augmented design and development. I designed a token system, built a component library, wrote the content, and shipped to production in a 48-hour sprint, documenting every AI interaction along the way.',
+      body: 'AI is not magic. It does not replace thinking. You still have to articulate what you want, define what "good" looks like, and understand how the thing you are building actually works. Because you can build fast, you should think slow - slower than ever before. Every prompt should count. Every use should count. Review the code with your own eyes, understand what changed and why, and course-correct when it drifts. I am acutely aware of the environmental cost of these tools, which makes intentional, deliberate use a responsibility, not a nice-to-have - until we figure out how to make them sustainable for everyone.\n\nWith that in mind, here is how I designed a token system, built a component library, wrote the content, and shipped a production portfolio in a 48-hour sprint.',
+    },
+
+    // --- The Setup ---
+    {
+      type: 'text',
+      heading: 'The Setup',
+      body: 'Before I opened Cursor or Claude, I had been collecting material for months. Case study metrics and slide decks organized in NotebookLM had been gathering for over a year. Font and color inspiration sites were in bookmarks but I forced myself to pick stuff and follow my gut with inspiration. I had a previous portfolio site with voice and tone I could riff on. A library of links, articles, and videos I had consumed about AI-augmented workflows. And most importantly, an idea I could articulate: a 48-hour portfolio sprint, tokens first, AI augmented, built as a beta test for a larger workflow presentation at work.\n\nI also had some prior experience prompting and building with AI. Not deep engineering knowledge, but enough to understand what was being generated, ask good questions about it, and know when something was off.',
     },
     {
       type: 'text',
-      heading: 'Process Snapshot',
-      body: 'This site was built from tokens first, then componentized into reusable layout, content, and interaction primitives. AI tooling accelerated scaffolding and iteration speed, while final quality, accessibility, and narrative accuracy were handled through manual review.\n\nThe next pass of this case study will publish the complete build log: token decisions, prompt-output pairs, correction loops, and final launch metrics.',
+      body: 'Friday afternoon I sat down with Claude and started planning. My process is messy at first: I talk, ramble, type, refine, and iterate until the shape of the plan emerges. I gave it context about who I am, what I was building, what tools I had, and what I saw in my head. Over about two hours, I had a structured plan, a set of strong starting prompts, and a Cursor context file that would act as a guardrail for every agent interaction going forward.\n\nTwo hours sounds like a lot for "just planning," but I was re-reading plans, thinking through decisions, and pressure-testing ideas before writing a single line of code. Plans are where it all starts. If you are not planning, you are going to end up with slop.',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-planning.png',
+      alt: 'Claude conversation showing the iterative planning session with structured plan output',
+      placeholder: 'Screenshot of the planning and refining session in Claude, showing the structured plan taking shape from a rambling conversation',
+      caption: 'The plan emerged from a messy conversation. Rambling in, structured plan out.',
+      aspect: '4:3',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-context-file.png',
+      alt: 'The CURSOR_CONTEXT.md file used as an AI guardrail throughout the build',
+      placeholder: 'Screenshot of the Cursor context file that served as the AI guardrail for the entire project',
+      caption: 'The context file gave every AI agent the same brief: design direction, constraints, and non-negotiables.',
+      aspect: '16:9',
+    },
+
+    // --- The Build ---
+    {
+      type: 'text',
+      heading: 'The Build',
+      body: 'Friday evening at 8:41, I started scaffolding in Cursor. The first prompt set up Next.js with my token system, extended Tailwind with all the token values, configured three Google Fonts, and created a utility helper. Then I had the agent build the full layout shell: container, header, footer, and a test hero so I could verify the type system.\n\nThe agent built the entire app skeleton with placeholders in one go. I had planned to work page by page, but the all-at-once approach actually worked fine. I did some manual tweaks to prompts along the way as we worked through the first few things. By midnight, after another 30 minutes finishing the layout shell and getting the case study data structure ready, I had the site running locally with themed skeletons of every page. Day one was done.',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-tokens.png',
+      alt: 'The token system setup showing design tokens mapped into the Tailwind configuration',
+      placeholder: 'Screenshot of the token system: design tokens defined in TypeScript and extended into the Tailwind theme',
+      caption: 'Tokens first. Every color, font, spacing, and radius value defined before a single component was built.',
+      aspect: '4:3',
+    },
+    {
+      type: 'text',
+      body: 'Saturday afternoon I hit a rhythm. Content refinement, visual tweaks, hybrid typing and prompting and committing. I got staging live on Vercel. Somewhere around 3pm I fell into a flow state and stopped documenting individual steps. I was just building: prompting specific changes, scanning the result, adjusting, committing. The key discipline was making sure we baked accessibility rules into everything as we went, not as an afterthought.',
+    },
+    {
+      type: 'callout',
+      label: 'Example Prompt',
+      body: 'Read CURSOR_CONTEXT.md and src/lib/tokens.ts. Build a ProjectCard component at src/components/content/ProjectCard.tsx.\n\nProps: accepts a single case study object from the CaseStudy type. Structure: wrapped in a Next.js Link to /work/[slug]. Image placeholder area: 16:9 aspect ratio, bg-elevated, 1px border in border-subtle, rounded-lg. Title in Space Grotesk at xl, subtitle in Didact Gothic, tags as small pills in uppercase.\n\nHover: subtle lift (translateY -2px), border transitions to accent-primary with a faint brass glow shadow. The whole card should be the click target for a11y. Add a focus-visible ring in accent color.',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-scaffold-styling.png',
+      alt: 'The portfolio scaffold with token-driven styling applied across all page templates',
+      placeholder: 'Screenshot showing the styled scaffold with token-driven colors, typography, and layout across multiple pages',
+      caption: 'The scaffold with styling applied. Token-driven colors and type across every template. This is where knowing a little about code helps with prompting',
+      aspect: '16:9',
+    },
+
+    // --- The Friction ---
+    {
+      type: 'text',
+      heading: 'The Friction',
+      body: 'Saturday around 1pm, as I was editing case study content, I realized something: my case study content lived in the same file as my front-end UI tokens. That was the agent\'s suggestion, and I had run with it without thinking about it too much. But working in the file made the problem obvious. Content and design tokens are different concerns, and coupling them would create maintenance headaches.\n\nI used Claude to talk through the separation plan in plain English, refined it together, and started the migration. Along the way we hit some routing errors. I spent time reading documentation, talking to the agent, and we got the fixes in. About 45 minutes total. It was a good reminder that you can course-correct once you have set a plan, and that verifying your instincts with AI and some searching builds real confidence in the decisions.',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-content-separation.png',
+      alt: 'Claude conversation showing the content and token separation plan being discussed in plain English',
+      placeholder: 'Screenshot of the conversation where the content/token separation was planned and refined',
+      caption: 'Talking through the architecture change in plain English before touching any code.',
+      aspect: '16:9',
+    },
+    {
+      type: 'text',
+      body: 'The other friction was knowing when to stop. During intense building, everything looks like it could be a little better. One more visual tweak. One more wording pass. The accessibility work helped ground me: running Lighthouse audits and checking focus states gave me concrete benchmarks instead of subjective "does this feel done?" It was clear what met the bar and what did not.\n\nWhat AI got right by default through the token system was significant: contrast ratios, semantic heading hierarchy, and focus ring styles all came along for free because the tokens enforced them. What had to be explicitly enforced through human-in-the-loop review was subtler: reading order, link target clarity, and making sure nothing important was conveyed through color alone.',
+    },
+    {
+      type: 'image',
+      src: '/images/meta-a11y.png',
+      alt: 'Accessibility testing results showing Lighthouse audit scores and manual review checklist',
+      placeholder: 'Screenshot of me telling Cursor about my manual a11y findings and updating our plan and progress.',
+      caption: 'The a11y pass: automated audits for the numbers, and me telling Cursor about my manual findings and updating our plan and progress.',
+      aspect: '16:9',
+    },
+
+    // --- The Results ---
+    {
+      type: 'metrics',
+      heading: 'The Results',
+      items: [
+        { value: '48 hrs', label: 'Tokens to production', accent: 'brass' },
+        { value: '5 pages', label: 'Shipped with full content', accent: 'brass' },
+        { value: '3', label: 'Complete case studies', accent: 'magenta' },
+        { value: '100', label: 'Mobile accessibility (Lighthouse)', accent: 'brass' },
+      ],
+    },
+    {
+      type: 'text',
+      body: 'By Saturday night at 10pm, I was tired. I was playing around with Codex 5.3 so I had it summarize everything built that day and plan for Sunday, which was mostly getting my domain configured and the site live.\n\nSunday morning I woke up with a dream, and in that dream I had the idea to add a resume page to the portfolio. What if the resume was just a Markdown file that generated both a downloadable PDF and the website page? I took the idea into Claude, worked out a plan, and had it built in about two hours. I found a service that renders Markdown to PDF, so all I needed was the website version. After a few iterations making sure the Markdown looked good in both formats, I called it for the 48-hour sprint.',
+    },
+    {
+      type: 'text',
+      body: 'I spent another hour double-checking everything we built against the plans we had written, then updated all the plans with progress and changes made along the way. Then I deployed the site live, noticed a few tweaks here and there (as you always do), and shipped it.\n\nWhere it stands now: a living project with an iterative post-launch plan, custom agent skills I have built to help maintain the project, work on new ideas, and document changes easily. The pipeline from tokens to code to deploy is validated and repeatable.\n\nThink smarter and work smarter, not harder. Do not slop it up.',
     },
   ],
 };
