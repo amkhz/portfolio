@@ -10,6 +10,7 @@ import { MetricCard } from "./MetricCard";
 import { MetricGrid } from "./MetricGrid";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { QuoteBlock } from "./QuoteBlock";
+import { CalloutBlock } from "./CalloutBlock";
 import { Tag } from "@/components/interactive/Tag";
 import { GlowEffect } from "@/components/effects/GlowEffect";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
@@ -94,6 +95,13 @@ function renderSection(
             attribution={section.attribution}
             role={section.role}
           />
+        </RevealOnScroll>
+      );
+
+    case "callout":
+      return (
+        <RevealOnScroll key={index}>
+          <CalloutBlock label={section.label} body={section.body} />
         </RevealOnScroll>
       );
 

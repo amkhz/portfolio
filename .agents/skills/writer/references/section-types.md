@@ -133,3 +133,24 @@ Reference for the `CaseStudySection` union type in `src/lib/case-study-content.t
   role: 'Enterprise Services'
 }
 ```
+
+## CalloutSection
+
+```typescript
+{ type: 'callout'; label?: string; body: string }
+```
+
+- Renders with magenta left border and `bg-elevated` background
+- `label` shown as uppercase header (e.g. "Example Prompt")
+- `body` supports `**bold**` and `[link](url)` inline markdown (same parsing as TextBlock)
+- Paragraphs separated by `\n\n`
+- Good for displaying prompts, code excerpts, or highlighted notes
+
+**Example:**
+```typescript
+{
+  type: 'callout',
+  label: 'Example Prompt',
+  body: 'Read CURSOR_CONTEXT.md and src/lib/tokens.ts. Build a ProjectCard component.\n\nProps: accepts a single case study object. Structure: wrapped in a Next.js Link to /work/[slug]. Add a focus-visible ring in accent color for a11y.'
+}
+```
