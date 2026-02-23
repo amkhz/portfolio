@@ -4,7 +4,7 @@
 > **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) pending. Part 3 (next iteration features) planned.
 
 ## Overview
-Personal portfolio for Justin Hernandez (product design leader with deep AI and enterprise experience).  
+Personal portfolio for Justin Hernandez (product design leader with deep AI and product design experience).  
 This repo is both the portfolio and a proof-of-concept for AI-assisted design-system-to-code workflow.
 
 **Live site:** https://justinh.design/  
@@ -17,7 +17,7 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 - **Language:** TypeScript (strict mode, `@/*` → `./src/*`)
 - **Deployment:** Vercel (production on custom domain)
 - **Build tools:** React Compiler + Turbopack enabled in `next.config.ts`
-- **AI skills:** Custom project skills in `.claude/skills/` + globally installed skills (see Skills section below)
+- **AI skills:** Custom project skills in `.agents/skills/` (agent-universal) + globally installed skills (see Skills section below)
 
 ## Current Build Status
 - `npm run lint` passes
@@ -122,21 +122,23 @@ src/app/
 
 ## Skills & Agent Workflow
 
-Four custom project skills live in `.claude/skills/` and coordinate work across the portfolio:
+**Setup after clone:** Run `bash scripts/setup-skills.sh` to create skill links in `.claude/skills/`. This creates junctions on Windows or symlinks on macOS/Linux pointing to the source of truth in `.agents/skills/`.
 
-- **Writer** (`.claude/skills/writer/`) — Creates and refines case study content. Directly edits `case-study-content.ts` and `tokens-ts.ts` metadata. Maintains Justin's voice. Has references for section types and the meta case study brief.
-- **Director** (`.claude/skills/director/`) — Maintains project direction and status. Evolves `plans/post-launch-plan.md` as the living status doc. Tracks pitch-worthy items for the team presentation. Coordinates work across the other skills.
-- **Dreamer** (`.claude/skills/dreamer/`) — Refines ideas into actionable plans. Does lightweight-to-deep research depending on scope. Produces plan files in `plans/` for the Builder to execute.
-- **Builder** (`.claude/skills/builder/`) — Implements features, fixes bugs, writes code. Executes Dreamer plans. Enforces quality gates (lint, build, a11y, token compliance). Has an architecture reference.
+Four custom project skills live in `.agents/skills/` (agent-universal) with junctions/symlinks in `.claude/skills/` for Claude Code:
+
+- **Writer** (`.agents/skills/writer/`) — Creates and refines case study content. Directly edits `case-study-content.ts` and `tokens-ts.ts` metadata. Maintains Justin's voice. Has references for section types and the meta case study brief.
+- **Director** (`.agents/skills/director/`) — Maintains project direction and status. Evolves `plans/post-launch-plan.md` as the living status doc. Tracks pitch-worthy items for the team presentation. Coordinates work across the other skills.
+- **Dreamer** (`.agents/skills/dreamer/`) — Refines ideas into actionable plans. Does lightweight-to-deep research depending on scope. Produces plan files in `plans/` for the Builder to execute.
+- **Builder** (`.agents/skills/builder/`) — Implements features, fixes bugs, writes code. Executes Dreamer plans. Enforces quality gates (lint, build, a11y, token compliance). Has an architecture reference.
 
 **Skill coordination flow:** Idea → Dreamer (refine + plan) → Builder (implement) or Writer (content) → Director (track, prioritize, flag pitch items)
 
-Three globally installed skills provide supplementary domain knowledge:
+Three globally installed skills provide supplementary domain knowledge (available to all agents via `~/.agents/skills/`):
 - **nextjs-app-router-patterns** — Next.js 14+ App Router architecture patterns
 - **accessibility** — WCAG compliance, automated testing (Lighthouse, axe-core), manual checklists
 - **tailwind-design-system** — Tailwind v4 `@theme` blocks, dark mode with CSS variables, CVA patterns
 
-Utility skills: `find-skills` (discover/install from skills.sh), `skill-creator` (create new skills).
+Utility skills (Claude Code only): `find-skills` (discover/install from skills.sh), `skill-creator` (create new skills).
 
 **Bookmarked for future install** (Figma sync work, Part 3.3):
 - `figma/mcp-server-guide@create-design-system-rules`

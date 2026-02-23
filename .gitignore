@@ -42,3 +42,9 @@ next-env.d.ts
 
 # plans
 /plans
+
+# skill junctions/symlinks (created by scripts/setup-skills.sh, source of truth is .agents/skills/)
+.claude/skills/writer
+.claude/skills/director
+.claude/skills/dreamer
+.claude/skills/builder
