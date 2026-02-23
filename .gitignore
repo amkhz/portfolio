@@ -48,3 +48,7 @@ next-env.d.ts
 .claude/skills/director
 .claude/skills/dreamer
 .claude/skills/builder
+.cursor/skills/writer
+.cursor/skills/director
+.cursor/skills/dreamer
+.cursor/skills/builder
