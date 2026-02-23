@@ -1,7 +1,7 @@
 # Project Context: Justin Hernandez Portfolio
 
 > **Last updated:** Saturday, February 22, 2026
-> **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) pending. Part 3 (next iteration features) planned.
+> **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) complete and deployed. Part 3 (next iteration features) planned, OKLCH migration plan drafted.
 
 ## Overview
 Personal portfolio for Justin Hernandez (product design leader with deep AI and product design experience).  
@@ -15,7 +15,7 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 - **Framework:** Next.js 16.1.6 (App Router) with React 19.2.3
 - **Styling:** Tailwind v4 (inline theme in `globals.css`, sourced from `tokens-ts.ts`)
 - **Language:** TypeScript (strict mode, `@/*` → `./src/*`)
-- **Deployment:** Vercel (production on custom domain)
+- **Deployment:** Vercel (production on custom domain, Analytics + Speed Insights enabled)
 - **Build tools:** React Compiler + Turbopack enabled in `next.config.ts`
 - **AI skills:** Custom project skills in `.agents/skills/` (agent-universal) + globally installed skills (see Skills section below)
 
@@ -51,14 +51,14 @@ src/app/
 └── work/[slug]/page.tsx     # Case study detail
 ```
 
-## Component Inventory (23 components)
+## Component Inventory (24 components)
 
 **Layout (3)**
 - `Container.tsx` — max-width wrapper
 - `Header.tsx` — site nav
 - `Footer.tsx` — site footer (email: justin@justinh.design)
 
-**Content (15)**
+**Content (16)**
 - `Hero.tsx` — page hero with tagline
 - `ProjectCard.tsx` — work index cards
 - `AboutSnippet.tsx` — home page about teaser
@@ -69,6 +69,7 @@ src/app/
 - `MetricGrid.tsx` — metrics row
 - `ComparisonBlock.tsx` — before/after comparison
 - `QuoteBlock.tsx` — pull quote
+- `CalloutBlock.tsx` — styled aside block (accent-secondary border, label + body)
 - `SectionHeading.tsx` — section header
 - `ResumeHeader.tsx` — resume page header
 - `ResumeSection.tsx` — resume section wrapper
@@ -86,34 +87,36 @@ src/app/
 
 ## Data & Content Layer
 - `src/lib/tokens-ts.ts` — design tokens + project metadata
-- `src/lib/case-study-content.ts` — case study section content (CaseStudySection union type: text, image, metrics, comparison, quote)
+- `src/lib/case-study-content.ts` — case study section content (CaseStudySection union type: text, image, metrics, comparison, quote, callout)
 - `src/lib/resume-content.ts` — resume data model
 - `src/lib/site-metadata.ts` — helper for resolving site URL across environments (local, Vercel preview, production)
 - `src/lib/utils.ts` — shared utilities
 - `public/1pageresume.md` — downloadable 1-page resume
 - `public/2pageresume.md` — downloadable 2-page resume
 
-## What Has Shipped (Part 1 — Complete)
-- **5 pages live:** Home, About, Resume, Work index, Work detail (3 case studies + meta placeholder)
+## What Has Shipped (Parts 1 & 2 — Complete)
+- **5 pages live:** Home, About, Resume, Work index, Work detail (4 case studies including meta)
+- **4 complete case studies:** AI Leadership, Instant SOW, Instant Doc Review, Building This Portfolio
 - **Custom 404 page** with Podkova heading, warm copy, brass GlowEffect, Button back to home
 - **Dynamic favicon system** — `icon.tsx` (32x32) and `apple-icon.tsx` (180x180), programmatic JH monogram
 - **Dynamic OG/social images** — `opengraph-image.tsx` and `twitter-image.tsx` (1200x630, brass glow)
 - **SEO:** robots.ts, sitemap.ts, per-page metadata with canonical URLs
+- **Vercel Analytics & Speed Insights** — `@vercel/analytics` and `@vercel/speed-insights` in root layout
 - **Content pass:** Em-dash reduction site-wide, case study image captions added, body text tightened
 - **Quick fixes:** Resume Marketo wording corrected, Footer email updated to justin@justinh.design
-- **3 complete case studies:** AI Leadership, Instant SOW, Instant Doc Review
-- **Real case-study images** in `public/images/` (20 assets)
+- **Real case-study images** in `public/images/` (20+ assets)
+- **CalloutBlock component** — new section type for styled aside blocks (used in meta case study)
+- **Image quality config** — `next.config.ts` optimized with `images: { qualities: [75, 90] }`
 
 ## What's Next
 
-### Part 2 — Meta Case Study (Priority)
-- `building-this-portfolio` entry exists with placeholder content
-- Awaiting Justin's friction log and sprint notes
-- Will follow the same section model as other case studies
-- Structure planned: The Setup → The Build → The Friction → The Results
+### Part 2 — Meta Case Study (Complete)
+- `building-this-portfolio` fully written with all four sections: The Setup, The Build, The Friction, The Results
+- Includes opening manifesto, example prompt callout, metrics, and 7 images
+- CalloutSection type and CalloutBlock component added to support example prompt formatting
 
 ### Part 3 — Next Iteration Features
-1. **Light/dark theme toggle** — light mode token set, ThemeProvider, ThemeToggle in Header, cookie-persisted preference
+1. **OKLCH migration + light/dark theme toggle** — Dreamer plan complete in `plans/oklch-migration-plan.md`. Phase 1: hex→OKLCH migration (low risk, standalone). Phase 2: light mode via L-channel adjustment, ThemeProvider, ThemeToggle in Header, cookie-persisted preference. Phase 3: Figma sync implications (advisory).
 2. **React Bits integration** — micro-interactions, text reveals, page transitions (must respect prefers-reduced-motion)
 3. **Token sync to Figma** — Token Studio / Variable Visualizer as first path, Figma Console MCP as stretch
 4. **Data model cleanup** — consider unifying tokens-ts.ts and case-study-content.ts, or moving to MDX
