@@ -8,46 +8,46 @@
 export const colors = {
   // Backgrounds — warm blacks, never pure #000
   bg: {
-    deep:      '#0A0A0B',     // deepest bg, page-level
-    base:      '#121214',     // primary surface
-    elevated:  '#1A1A1E',     // cards, elevated surfaces
-    subtle:    '#222228',     // hover states, subtle distinction
+    deep:      'oklch(0.1452 0.0021 286.13)',   // #0A0A0B — deepest bg, page-level
+    base:      'oklch(0.1831 0.0040 285.99)',   // #121214 — primary surface
+    elevated:  'oklch(0.2195 0.0077 285.74)',   // #1A1A1E — cards, elevated surfaces
+    subtle:    'oklch(0.2545 0.0112 285.58)',   // #222228 — hover states, subtle distinction
   },
 
   // Text — warm whites, never pure #FFF
   text: {
-    primary:   '#F0EDE8',     // headings, primary body — warm parchment
-    secondary: '#B8B2A8',     // supporting text — aged linen
-    muted:     '#807A72',     // captions, metadata — a11y safe for large text/UI only
-    inverse:   '#0A0A0B',     // text on light/accent surfaces
+    primary:   'oklch(0.9470 0.0074 80.72)',    // #F0EDE8 — headings, primary body — warm parchment
+    secondary: 'oklch(0.7657 0.0156 80.70)',    // #B8B2A8 — supporting text — aged linen
+    muted:     'oklch(0.5824 0.0141 75.29)',    // #807A72 — captions, metadata — a11y safe for large text/UI only
+    inverse:   'oklch(0.1452 0.0021 286.13)',   // #0A0A0B — text on light/accent surfaces
   },
 
   // Primary accent — aged brass (warm, material, mid-century)
   accent: {
-    primary:   '#C8956A',     // primary actions, links, key highlights
-    hover:     '#D4A87A',     // hover/focus state
-    muted:     '#C8956A33',   // 20% — subtle backgrounds, borders
-    glow:      '#C8956A1A',   // 10% — ambient glow effects
+    primary:   'oklch(0.7087 0.0845 60.96)',    // #C8956A — primary actions, links, key highlights
+    hover:     'oklch(0.7610 0.0801 67.39)',    // #D4A87A — hover/focus state
+    muted:     'oklch(0.7087 0.0845 60.96 / 0.2)',  // #C8956A33 — 20% — subtle backgrounds, borders
+    glow:      'oklch(0.7087 0.0845 60.96 / 0.1)',  // #C8956A1A — 10% — ambient glow effects
   },
 
   // Secondary accent — dusty magenta (atmospheric, sci-fi warmth)
   secondary: {
-    primary:   '#C278A0',     // interactive states, tech elements, highlights
-    hover:     '#D08BB2',     // hover/focus state
-    muted:     '#C278A033',   // 20% — subtle backgrounds
-    glow:      '#C278A01A',   // 10% — ambient glow effects
+    primary:   'oklch(0.6634 0.1052 346.74)',   // #C278A0 — interactive states, tech elements, highlights
+    hover:     'oklch(0.7179 0.0975 344.91)',   // #D08BB2 — hover/focus state
+    muted:     'oklch(0.6634 0.1052 346.74 / 0.2)',  // #C278A033 — 20% — subtle backgrounds
+    glow:      'oklch(0.6634 0.1052 346.74 / 0.1)',  // #C278A01A — 10% — ambient glow effects
   },
 
   // Borders
   border: {
-    subtle:    '#2A2A30',     // card edges, dividers
-    strong:    '#3A3A42',     // emphasized borders
+    subtle:    'oklch(0.2875 0.0109 285.70)',   // #2A2A30 — card edges, dividers
+    strong:    'oklch(0.3516 0.0138 285.67)',   // #3A3A42 — emphasized borders
   },
 
   // Semantic
-  success:     '#7AB87A',
-  warning:     '#D4A84A',
-  error:       '#C87A6A',
+  success:     'oklch(0.7243 0.1091 144.35)',   // #7AB87A
+  warning:     'oklch(0.7541 0.1223 83.74)',    // #D4A84A
+  error:       'oklch(0.6591 0.1012 32.36)',    // #C87A6A
 } as const;
 
 export const typography = {
@@ -134,13 +134,13 @@ export const motion = {
 } as const;
 
 export const shadows = {
-  sm:   '0 1px 2px rgba(10, 10, 11, 0.3)',
-  md:   '0 4px 12px rgba(10, 10, 11, 0.4)',
-  lg:   '0 8px 24px rgba(10, 10, 11, 0.5)',
-  xl:   '0 16px 48px rgba(10, 10, 11, 0.6)',
+  sm:   '0 1px 2px oklch(0.1452 0.0021 286.13 / 0.3)',      // rgba(10, 10, 11, 0.3)
+  md:   '0 4px 12px oklch(0.1452 0.0021 286.13 / 0.4)',     // rgba(10, 10, 11, 0.4)
+  lg:   '0 8px 24px oklch(0.1452 0.0021 286.13 / 0.5)',     // rgba(10, 10, 11, 0.5)
+  xl:   '0 16px 48px oklch(0.1452 0.0021 286.13 / 0.6)',    // rgba(10, 10, 11, 0.6)
   glow: {
-    brass:   '0 0 24px rgba(200, 149, 106, 0.15)',
-    magenta: '0 0 24px rgba(194, 120, 160, 0.15)',
+    brass:   '0 0 24px oklch(0.7087 0.0845 60.96 / 0.15)',  // rgba(200, 149, 106, 0.15)
+    magenta: '0 0 24px oklch(0.6634 0.1052 346.74 / 0.15)', // rgba(194, 120, 160, 0.15)
   },
 } as const;
 

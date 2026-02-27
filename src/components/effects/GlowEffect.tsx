@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 
 const colorMap = {
-  brass: "rgba(200, 149, 106, 0.17)",
-  magenta: "rgba(194, 120, 160, 0.17)",
+  brass: "oklch(0.7087 0.0845 60.96 / 0.17)",
+  magenta: "oklch(0.6634 0.1052 346.74 / 0.17)",
 } as const;
 
 const colorFade = {
-  brass: "rgba(200, 149, 106, 0.06)",
-  magenta: "rgba(194, 120, 160, 0.06)",
+  brass: "oklch(0.7087 0.0845 60.96 / 0.06)",
+  magenta: "oklch(0.6634 0.1052 346.74 / 0.06)",
 } as const;
 
 const sizeMap = {
