@@ -4,7 +4,7 @@ export function GrainOverlay() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-40"
     >
-      <svg className="h-full w-full opacity-[0.04]">
+      <svg className="h-full w-full" style={{ opacity: "var(--grain-opacity)" }}>
         <filter id="grain">
           <feTurbulence
             type="fractalNoise"

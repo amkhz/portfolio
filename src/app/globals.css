@@ -4,7 +4,115 @@
    DESIGN TOKENS → TAILWIND v4 THEME
    Source of truth: src/lib/tokens-ts.ts
    Visual direction: Danish mid-century × sci-fi
+   Dark mode default, light mode via [data-theme="light"]
    ============================================ */
+
+/* --- Theme-specific color values (--theme-* prefix avoids circular refs) --- */
+@layer theme {
+  :root {
+    /* Backgrounds */
+    --theme-bg-deep: oklch(0.1452 0.0021 286.13);
+    --theme-bg-base: oklch(0.1831 0.0040 285.99);
+    --theme-bg-elevated: oklch(0.2195 0.0077 285.74);
+    --theme-bg-subtle: oklch(0.2545 0.0112 285.58);
+
+    /* Text */
+    --theme-text-primary: oklch(0.9470 0.0074 80.72);
+    --theme-text-secondary: oklch(0.7657 0.0156 80.70);
+    --theme-text-muted: oklch(0.5824 0.0141 75.29);
+    --theme-text-inverse: oklch(0.1452 0.0021 286.13);
+
+    /* Accent (aged brass) */
+    --theme-accent-primary: oklch(0.7087 0.0845 60.96);
+    --theme-accent-hover: oklch(0.7610 0.0801 67.39);
+    --theme-accent-muted: oklch(0.7087 0.0845 60.96 / 0.2);
+    --theme-accent-glow: oklch(0.7087 0.0845 60.96 / 0.1);
+
+    /* Secondary (dusty magenta) */
+    --theme-secondary-primary: oklch(0.6634 0.1052 346.74);
+    --theme-secondary-hover: oklch(0.7179 0.0975 344.91);
+    --theme-secondary-muted: oklch(0.6634 0.1052 346.74 / 0.2);
+    --theme-secondary-glow: oklch(0.6634 0.1052 346.74 / 0.1);
+
+    /* Borders */
+    --theme-border-subtle: oklch(0.2875 0.0109 285.70);
+    --theme-border-strong: oklch(0.3516 0.0138 285.67);
+
+    /* Semantic */
+    --theme-success: oklch(0.7243 0.1091 144.35);
+    --theme-warning: oklch(0.7541 0.1223 83.74);
+    --theme-error: oklch(0.6591 0.1012 32.36);
+
+    /* Shadows */
+    --theme-shadow-sm: 0 1px 2px oklch(0.1452 0.0021 286.13 / 0.3);
+    --theme-shadow-md: 0 4px 12px oklch(0.1452 0.0021 286.13 / 0.4);
+    --theme-shadow-lg: 0 8px 24px oklch(0.1452 0.0021 286.13 / 0.5);
+    --theme-shadow-xl: 0 16px 48px oklch(0.1452 0.0021 286.13 / 0.6);
+    --theme-shadow-glow-brass: 0 0 24px oklch(0.7087 0.0845 60.96 / 0.15);
+    --theme-shadow-glow-magenta: 0 0 24px oklch(0.6634 0.1052 346.74 / 0.15);
+
+    /* GlowEffect gradient values */
+    --glow-brass-center: oklch(0.7087 0.0845 60.96 / 0.17);
+    --glow-brass-fade: oklch(0.7087 0.0845 60.96 / 0.06);
+    --glow-magenta-center: oklch(0.6634 0.1052 346.74 / 0.17);
+    --glow-magenta-fade: oklch(0.6634 0.1052 346.74 / 0.06);
+
+    /* GrainOverlay opacity */
+    --grain-opacity: 0.04;
+  }
+
+  [data-theme="light"] {
+    /* Backgrounds — warm cream/paper, not pure white */
+    --theme-bg-deep: oklch(0.9750 0.0040 80.72);
+    --theme-bg-base: oklch(0.9550 0.0055 80.70);
+    --theme-bg-elevated: oklch(0.9900 0.0025 80.72);
+    --theme-bg-subtle: oklch(0.9300 0.0070 80.70);
+
+    /* Text — warm darks */
+    --theme-text-primary: oklch(0.1800 0.0074 80.72);
+    --theme-text-secondary: oklch(0.3800 0.0156 80.70);
+    --theme-text-muted: oklch(0.4800 0.0141 75.29);
+    --theme-text-inverse: oklch(0.9750 0.0040 80.72);
+
+    /* Accent (aged brass) — slightly darker on light bg for contrast */
+    --theme-accent-primary: oklch(0.5800 0.1000 60.96);
+    --theme-accent-hover: oklch(0.5300 0.0950 67.39);
+    --theme-accent-muted: oklch(0.5800 0.1000 60.96 / 0.15);
+    --theme-accent-glow: oklch(0.5800 0.1000 60.96 / 0.08);
+
+    /* Secondary (dusty magenta) — darker on light bg */
+    --theme-secondary-primary: oklch(0.5400 0.1200 346.74);
+    --theme-secondary-hover: oklch(0.4900 0.1100 344.91);
+    --theme-secondary-muted: oklch(0.5400 0.1200 346.74 / 0.15);
+    --theme-secondary-glow: oklch(0.5400 0.1200 346.74 / 0.08);
+
+    /* Borders — warm light grays */
+    --theme-border-subtle: oklch(0.8800 0.0050 80.70);
+    --theme-border-strong: oklch(0.8200 0.0070 80.70);
+
+    /* Semantic — darker for readability on light bg */
+    --theme-success: oklch(0.4800 0.1091 144.35);
+    --theme-warning: oklch(0.5200 0.1223 83.74);
+    --theme-error: oklch(0.5000 0.1012 32.36);
+
+    /* Shadows — lighter, warm-tinted */
+    --theme-shadow-sm: 0 1px 2px oklch(0.5000 0.0021 80.70 / 0.08);
+    --theme-shadow-md: 0 4px 12px oklch(0.5000 0.0021 80.70 / 0.10);
+    --theme-shadow-lg: 0 8px 24px oklch(0.5000 0.0021 80.70 / 0.12);
+    --theme-shadow-xl: 0 16px 48px oklch(0.5000 0.0021 80.70 / 0.15);
+    --theme-shadow-glow-brass: 0 2px 12px oklch(0.5800 0.1000 60.96 / 0.20);
+    --theme-shadow-glow-magenta: 0 2px 12px oklch(0.5400 0.1200 346.74 / 0.20);
+
+    /* GlowEffect — subtle warm shadow instead of glow */
+    --glow-brass-center: oklch(0.5800 0.1000 60.96 / 0.10);
+    --glow-brass-fade: oklch(0.5800 0.1000 60.96 / 0.03);
+    --glow-magenta-center: oklch(0.5400 0.1200 346.74 / 0.10);
+    --glow-magenta-fade: oklch(0.5400 0.1200 346.74 / 0.03);
+
+    /* GrainOverlay — slightly reduced on light to stay subtle */
+    --grain-opacity: 0.03;
+  }
+}
 
 @theme inline {
   /* --- Fonts (set via next/font CSS variables) --- */
@@ -12,38 +120,33 @@
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
 
-  /* --- Colors: Backgrounds --- */
-  --color-bg-deep: #0A0A0B;
-  --color-bg-base: #121214;
-  --color-bg-elevated: #1A1A1E;
-  --color-bg-subtle: #222228;
+  /* --- Colors: resolve from theme layer --- */
+  --color-bg-deep: var(--theme-bg-deep);
+  --color-bg-base: var(--theme-bg-base);
+  --color-bg-elevated: var(--theme-bg-elevated);
+  --color-bg-subtle: var(--theme-bg-subtle);
 
-  /* --- Colors: Text --- */
-  --color-text-primary: #F0EDE8;
-  --color-text-secondary: #B8B2A8;
-  --color-text-muted: #807A72;
-  --color-text-inverse: #0A0A0B;
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-inverse: var(--theme-text-inverse);
 
-  /* --- Colors: Primary accent (aged brass) --- */
-  --color-accent-primary: #C8956A;
-  --color-accent-hover: #D4A87A;
-  --color-accent-muted: #C8956A33;
-  --color-accent-glow: #C8956A1A;
+  --color-accent-primary: var(--theme-accent-primary);
+  --color-accent-hover: var(--theme-accent-hover);
+  --color-accent-muted: var(--theme-accent-muted);
+  --color-accent-glow: var(--theme-accent-glow);
 
-  /* --- Colors: Secondary accent (dusty magenta) --- */
-  --color-secondary-primary: #C278A0;
-  --color-secondary-hover: #D08BB2;
-  --color-secondary-muted: #C278A033;
-  --color-secondary-glow: #C278A01A;
+  --color-secondary-primary: var(--theme-secondary-primary);
+  --color-secondary-hover: var(--theme-secondary-hover);
+  --color-secondary-muted: var(--theme-secondary-muted);
+  --color-secondary-glow: var(--theme-secondary-glow);
 
-  /* --- Colors: Borders --- */
-  --color-border-subtle: #2A2A30;
-  --color-border-strong: #3A3A42;
+  --color-border-subtle: var(--theme-border-subtle);
+  --color-border-strong: var(--theme-border-strong);
 
-  /* --- Colors: Semantic --- */
-  --color-success: #7AB87A;
-  --color-warning: #D4A84A;
-  --color-error: #C87A6A;
+  --color-success: var(--theme-success);
+  --color-warning: var(--theme-warning);
+  --color-error: var(--theme-error);
 
   /* --- Typography: Font sizes --- */
   --text-xs: 0.75rem;
@@ -98,13 +201,13 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* --- Shadows (warm-tinted, never cool gray) --- */
-  --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.3);
-  --shadow-md: 0 4px 12px rgba(10, 10, 11, 0.4);
-  --shadow-lg: 0 8px 24px rgba(10, 10, 11, 0.5);
-  --shadow-xl: 0 16px 48px rgba(10, 10, 11, 0.6);
-  --shadow-glow-brass: 0 0 24px rgba(200, 149, 106, 0.15);
-  --shadow-glow-magenta: 0 0 24px rgba(194, 120, 160, 0.15);
+  /* --- Shadows: resolve from theme layer --- */
+  --shadow-sm: var(--theme-shadow-sm);
+  --shadow-md: var(--theme-shadow-md);
+  --shadow-lg: var(--theme-shadow-lg);
+  --shadow-xl: var(--theme-shadow-xl);
+  --shadow-glow-brass: var(--theme-shadow-glow-brass);
+  --shadow-glow-magenta: var(--theme-shadow-glow-magenta);
 
   /* --- Motion / Transitions --- */
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
@@ -121,7 +224,7 @@
 
 /* ============================================
    BASE STYLES
-   Dark mode is the DEFAULT — no light mode.
+   Dark mode is the default.
    ============================================ */
 
 body {
@@ -137,4 +240,37 @@ button:focus-visible,
 [role="button"]:focus-visible {
   outline: 2px solid var(--color-accent-primary);
   outline-offset: 2px;
+}
+
+/* ============================================
+   THEME TRANSITION
+   Smooth crossfade when toggling themes.
+   Suppressed on initial page load and for
+   users who prefer reduced motion.
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  transition: background-color 300ms var(--ease-default),
+              color 300ms var(--ease-default),
+              border-color 300ms var(--ease-default),
+              box-shadow 300ms var(--ease-default),
+              opacity 300ms var(--ease-default);
+}
+
+/* Prevent transitions on page load */
+[data-no-transition] *,
+[data-no-transition] *::before,
+[data-no-transition] *::after {
+  transition-duration: 0ms !important;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+  }
 }

@@ -164,7 +164,7 @@ export default function AboutPage() {
                   Accessibility isn&apos;t a feature.
                 </strong>{" "}
                 It&apos;s the baseline. Every token, component, and interaction
-                in my work meets WCAG 2.1 AA. Not because it&apos;s required,
+                in my work meets modern accessibility standards. Not because it&apos;s required,
                 but because design that excludes people isn&apos;t design.
               </p>
             </div>

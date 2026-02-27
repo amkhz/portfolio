@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { ThemeToggle } from "@/components/interactive/ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,7 +28,8 @@ export function Header() {
             className="font-heading text-lg font-semibold tracking-tight text-text-primary transition-colors duration-200 hover:text-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-deep"
             aria-label="Justin Hernandez — Home"
           >
-            Justin Hernandez
+            <span className="hidden sm:inline">Justin Hernandez</span>
+            <span className="sm:hidden">JH</span>
           </Link>
 
           {/* Nav links — right side */}
@@ -42,6 +44,9 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li>
+              <ThemeToggle />
+            </li>
           </ul>
         </nav>
       </Container>

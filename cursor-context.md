@@ -1,7 +1,7 @@
 # Project Context: Justin Hernandez Portfolio
 
-> **Last updated:** Saturday, February 22, 2026
-> **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) complete and deployed. Part 3 (next iteration features) planned, OKLCH migration plan drafted.
+> **Last updated:** Friday, February 27, 2026
+> **Current phase:** Post-launch. Part 1 polish complete and deployed. Part 2 (meta case study) complete and deployed. Part 3 in progress: OKLCH Phase 1 (hex→OKLCH) and Phase 2 (light mode) complete, Phase 3 (Figma sync implications) advisory-only.
 
 ## Overview
 Personal portfolio for Justin Hernandez (product design leader with deep AI and product design experience).  
@@ -9,11 +9,11 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 
 **Live site:** https://justinh.design/  
 **Repo:** https://github.com/amkhz/portfolio  
-**Design direction:** "Blade Runner + William Gibson meets Finn Juhl" — Danish mid-century warmth + sci-fi atmosphere. Dark mode, warm blacks, dual accent (brass #C8956A + dusty magenta #C278A0), WCAG 2.2 AA compliant throughout.
+**Design direction:** "Blade Runner + William Gibson meets Finn Juhl" — Danish mid-century warmth + sci-fi atmosphere. Dark/light mode (cookie-persisted toggle), warm blacks (dark) / warm cream (light), dual accent (brass `oklch(0.7087 0.0845 60.96)` / #C8956A + dusty magenta `oklch(0.6634 0.1052 346.74)` / #C278A0), WCAG 2.2 AA compliant throughout.
 
 ## Stack
 - **Framework:** Next.js 16.1.6 (App Router) with React 19.2.3
-- **Styling:** Tailwind v4 (inline theme in `globals.css`, sourced from `tokens-ts.ts`)
+- **Styling:** Tailwind v4 (inline theme in `globals.css`, sourced from `tokens-ts.ts`) — **OKLCH color space**
 - **Language:** TypeScript (strict mode, `@/*` → `./src/*`)
 - **Deployment:** Vercel (production on custom domain, Analytics + Speed Insights enabled)
 - **Build tools:** React Compiler + Turbopack enabled in `next.config.ts`
@@ -22,7 +22,8 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 ## Current Build Status
 - `npm run lint` passes
 - `npm run build` passes
-- Static routes generated for:
+- Pages are dynamic (layout reads cookies for theme preference)
+- Routes generated for:
   - `/`
   - `/about`
   - `/resume`
@@ -36,7 +37,7 @@ This repo is both the portfolio and a proof-of-concept for AI-assisted design-sy
 ```
 src/app/
 ├── globals.css              # Tailwind v4 theme (token source)
-├── layout.tsx               # Root layout (fonts, Header, Footer, GrainOverlay)
+├── layout.tsx               # Root layout (async, ThemeProvider, fonts, Header, Footer, GrainOverlay, anti-FOWT script)
 ├── page.tsx                 # Home
 ├── not-found.tsx            # Custom 404 (Podkova heading, GlowEffect, Button)
 ├── icon.tsx                 # Dynamic favicon (32x32 JH monogram)
@@ -51,7 +52,7 @@ src/app/
 └── work/[slug]/page.tsx     # Case study detail
 ```
 
-## Component Inventory (24 components)
+## Component Inventory (25 components)
 
 **Layout (3)**
 - `Container.tsx` — max-width wrapper
@@ -81,22 +82,27 @@ src/app/
 - `GrainOverlay.tsx` — film grain texture
 - `RevealOnScroll.tsx` — scroll-triggered fade-in
 
-**Interactive (2)**
+**Interactive (3)**
 - `Button.tsx` — primary/secondary button with href support
 - `Tag.tsx` — label/tag chip
+- `ThemeToggle.tsx` — light/dark mode toggle with filament/lightbulb icon (44px tap target, accessible label, motion-reduce safe)
 
 ## Data & Content Layer
-- `src/lib/tokens-ts.ts` — design tokens + project metadata
+- `src/lib/tokens-ts.ts` — design tokens + project metadata (includes `lightColors` and `lightShadows` parallel exports)
 - `src/lib/case-study-content.ts` — case study section content (CaseStudySection union type: text, image, metrics, comparison, quote, callout)
 - `src/lib/resume-content.ts` — resume data model
 - `src/lib/site-metadata.ts` — helper for resolving site URL across environments (local, Vercel preview, production)
+- `src/lib/theme-script.ts` — inline `<script>` string for anti-FOWT (reads cookie, falls back to `prefers-color-scheme`, sets `data-theme` before hydration)
 - `src/lib/utils.ts` — shared utilities
+- `src/providers/ThemeProvider.tsx` — "use client" React context provider (resolves theme from cookie or `prefers-color-scheme`, exposes `theme` and `toggleTheme()`, cookie-persisted)
 - `public/1pageresume.md` — downloadable 1-page resume
 - `public/2pageresume.md` — downloadable 2-page resume
 
-## What Has Shipped (Parts 1 & 2 — Complete)
+## What Has Shipped (Parts 1, 2, & 3.1a–b — Complete)
 - **5 pages live:** Home, About, Resume, Work index, Work detail (4 case studies including meta)
 - **4 complete case studies:** AI Leadership, Instant SOW, Instant Doc Review, Building This Portfolio
+- **OKLCH color migration (Phase 1)** — All 21 color tokens, 6 shadows, and 4 GlowEffect values migrated from hex/rgba to OKLCH. OG image files kept hex (Satori limitation). Zero new dependencies. Computed programmatically via sRGB→OKLAB→OKLCH pipeline.
+- **Light/dark theme toggle (Phase 2)** — Full light mode via OKLCH L-channel adjustment. ThemeProvider (React context + cookie), ThemeToggle with filament icon in Header, anti-FOWT inline script, `globals.css` refactored with `@layer theme` and `--theme-*` CSS custom properties. GlowEffect and GrainOverlay adapted for light backgrounds. Zero new dependencies. 3 new files, 6 modified. Both themes pass WCAG 2.2 AA.
 - **Custom 404 page** with Podkova heading, warm copy, brass GlowEffect, Button back to home
 - **Dynamic favicon system** — `icon.tsx` (32x32) and `apple-icon.tsx` (180x180), programmatic JH monogram
 - **Dynamic OG/social images** — `opengraph-image.tsx` and `twitter-image.tsx` (1200x630, brass glow)
@@ -116,7 +122,7 @@ src/app/
 - CalloutSection type and CalloutBlock component added to support example prompt formatting
 
 ### Part 3 — Next Iteration Features
-1. **OKLCH migration + light/dark theme toggle** — Dreamer plan complete in `plans/oklch-migration-plan.md`. Phase 1: hex→OKLCH migration (low risk, standalone). Phase 2: light mode via L-channel adjustment, ThemeProvider, ThemeToggle in Header, cookie-persisted preference. Phase 3: Figma sync implications (advisory).
+1. **OKLCH migration + light/dark theme toggle** — Phase 1 (hex→OKLCH) DONE (2026-02-26). Phase 2 (light mode) DONE (2026-02-27). Phase 3: Figma sync implications (advisory, no code). Full plan in `plans/oklch-migration-plan.md`.
 2. **React Bits integration** — micro-interactions, text reveals, page transitions (must respect prefers-reduced-motion)
 3. **Token sync to Figma** — Token Studio / Variable Visualizer as first path, Figma Console MCP as stretch
 4. **Data model cleanup** — consider unifying tokens-ts.ts and case-study-content.ts, or moving to MDX
