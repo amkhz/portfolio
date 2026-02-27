@@ -1,15 +1,5 @@
 import { cn } from "@/lib/utils";
 
-const colorMap = {
-  brass: "oklch(0.7087 0.0845 60.96 / 0.17)",
-  magenta: "oklch(0.6634 0.1052 346.74 / 0.17)",
-} as const;
-
-const colorFade = {
-  brass: "oklch(0.7087 0.0845 60.96 / 0.06)",
-  magenta: "oklch(0.6634 0.1052 346.74 / 0.06)",
-} as const;
-
 const sizeMap = {
   sm: "h-[200px] w-[200px]",
   md: "h-[400px] w-[400px]",
@@ -20,6 +10,16 @@ const blurMap = {
   sm: "blur(80px)",
   md: "blur(100px)",
   lg: "blur(120px)",
+} as const;
+
+const centerVarMap = {
+  brass: "var(--glow-brass-center)",
+  magenta: "var(--glow-magenta-center)",
+} as const;
+
+const fadeVarMap = {
+  brass: "var(--glow-brass-fade)",
+  magenta: "var(--glow-magenta-fade)",
 } as const;
 
 export function GlowEffect({
@@ -40,7 +40,7 @@ export function GlowEffect({
         className
       )}
       style={{
-        background: `radial-gradient(ellipse at center, ${colorMap[color]} 0%, ${colorFade[color]} 40%, transparent 70%)`,
+        background: `radial-gradient(ellipse at center, ${centerVarMap[color]} 0%, ${fadeVarMap[color]} 40%, transparent 70%)`,
         filter: blurMap[size],
       }}
     />
